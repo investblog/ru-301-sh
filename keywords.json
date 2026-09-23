@@ -1,0 +1,379 @@
+{
+  "generated": "2026-09-23T18:00:00Z",
+  "pages": [
+    {
+      "url": "https://ru.301.sh/what-cloudflare-free-alerts-you-about/",
+      "locale": "ru",
+      "title": "О чём Cloudflare предупредит на бесплатном тарифе, а что проверять самому",
+      "primary": "уведомления cloudflare бесплатный тариф",
+      "keywords": [
+        "уведомления cloudflare бесплатный тариф",
+        "cloudflare passive origin monitoring",
+        "health checks cloudflare free",
+        "мониторинг редиректов cloudflare worker",
+        "cloudflare 522 уведомление"
+      ],
+      "tags": [
+        "redirects",
+        "cloudflare",
+        "dns"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/lock-com-renewal-price-for-ten-years/",
+      "locale": "ru",
+      "title": "С 1 ноября .com дорожает. Как закрепить нынешнюю цену на десять лет",
+      "primary": "повышение цены com 1 ноября",
+      "keywords": [
+        "повышение цены com 1 ноября",
+        "продлить домен на 10 лет",
+        "verisign повышение цены",
+        "продление com cloudflare registrar",
+        "оптовая цена com"
+      ],
+      "tags": [
+        "dns",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/200-day-certificates-on-a-domain-portfolio/",
+      "locale": "ru",
+      "title": "Сертификат теперь живёт 200 дней: какие домены вы всё ещё продлеваете руками",
+      "primary": "ssl сертификат 200 дней",
+      "keywords": [
+        "ssl сертификат 200 дней",
+        "срок действия ssl сертификата 2026",
+        "сертификат на 47 дней",
+        "origin сертификат cloudflare 15 лет",
+        "ssl на припаркованном домене"
+      ],
+      "tags": [
+        "tls",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/api-token-cannot-add-more-zones/",
+      "locale": "ru",
+      "title": "Лимит зон, в который упирается API-токен и не упирается Global API Key",
+      "primary": "ошибка 1118 cloudflare",
+      "keywords": [
+        "ошибка 1118 cloudflare",
+        "лимит зон cloudflare",
+        "массовое добавление доменов в cloudflare",
+        "api токен или global api key",
+        "exceeded the limit for adding zones"
+      ],
+      "tags": [
+        "limits",
+        "dns",
+        "browser",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/redirect-rule-active-but-nothing-happens/",
+      "locale": "ru",
+      "title": "Правило редиректа в статусе Active, и ничего не происходит",
+      "primary": "правило редиректа active",
+      "keywords": [
+        "правило редиректа active",
+        "cloudflare редирект не срабатывает",
+        "cloudflare trace правило",
+        "wildcard редирект строка запроса"
+      ],
+      "tags": [
+        "redirects",
+        "cloudflare",
+        "dns"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/audit-agent-readiness-in-the-browser/",
+      "locale": "ru",
+      "title": "Как проверить готовность к агентам, если сканер не достаёт до сайта",
+      "primary": "проверка готовности сайта в браузере",
+      "keywords": [
+        "проверка готовности сайта в браузере",
+        "расширение agent readiness",
+        "готовность стейджинга к агентам",
+        "agent readiness inspector"
+      ],
+      "tags": [
+        "ai",
+        "browser"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/unique-click-id-on-a-free-redirect/",
+      "locale": "ru",
+      "title": "Уникальный click id на бесплатном редиректе Cloudflare, без воркера",
+      "primary": "уникальный click id на редиректе",
+      "keywords": [
+        "уникальный click id на редиректе",
+        "cf ray id на редиректе",
+        "click id без воркера",
+        "идентификатор клика на редиректе"
+      ],
+      "tags": [
+        "tracking",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/vps-jobs-on-cloudflares-free-plan/",
+      "locale": "ru",
+      "title": "Cloudflare вместо сервера: все задачи VPS и что с ними делает бесплатный тариф",
+      "primary": "переезд с vps на cloudflare",
+      "keywords": [
+        "переезд с vps на cloudflare",
+        "бесплатный тариф cloudflare",
+        "cloudflare tunnel вместо vps",
+        "крон на бесплатном тарифе"
+      ],
+      "tags": [
+        "cloudflare",
+        "dns"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/mcp-server-on-workers-free-plan/",
+      "locale": "ru",
+      "title": "MCP-сервер на бесплатных Cloudflare Workers: укладывается ли он в 10 мс CPU",
+      "primary": "mcp сервер на cloudflare workers",
+      "keywords": [
+        "mcp сервер на cloudflare workers",
+        "mcp сервер без состояния",
+        "лимит cpu workers",
+        "mcp сервер на бесплатном тарифе"
+      ],
+      "tags": [
+        "ai",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/attribution-when-the-conversion-page-is-not-yours/",
+      "locale": "ru",
+      "title": "Конверсия на чужом домене: как атрибутировать её через постбек партнёрки",
+      "primary": "постбек партнёрки",
+      "keywords": [
+        "постбек партнёрки",
+        "конверсия на чужом домене",
+        "офлайн импорт конверсий gclid",
+        "click id на хопе"
+      ],
+      "tags": [
+        "tracking",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/see-the-redirect-chain-your-browser-followed/",
+      "locale": "ru",
+      "title": "Как посмотреть цепочку редиректов, по которой реально прошёл браузер",
+      "primary": "цепочка редиректов в браузере",
+      "keywords": [
+        "цепочка редиректов в браузере",
+        "js редирект curl не показывает",
+        "meta refresh редирект",
+        "hsts редирект в браузере"
+      ],
+      "tags": [
+        "redirects",
+        "browser"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/redirect-domains-to-one-site-without-a-penalty/",
+      "locale": "ru",
+      "title": "Как склеить свои домены в один сайт и не попасть под санкции Google",
+      "primary": "редирект доменов на один сайт",
+      "keywords": [
+        "редирект доменов на один сайт",
+        "склеить свои домены в один сайт",
+        "редирект дропнутого домена",
+        "консолидация доменов google"
+      ],
+      "tags": [
+        "redirects",
+        "bulk-redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/auto-renew-on-domain-still-expired/",
+      "locale": "ru",
+      "title": "Автопродление домена не сработало: почему домен всё равно истёк",
+      "primary": "домен истёк при автопродлении",
+      "keywords": [
+        "домен истёк при автопродлении",
+        "автопродление cloudflare registrar",
+        "продление домена не прошло",
+        "домен не продлился"
+      ],
+      "tags": [
+        "dns",
+        "cloudflare",
+        "redirects"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/redirect-silently-fails/",
+      "locale": "ru",
+      "title": "Редирект в Cloudflare настроен, а домен отдаёт 522, 525 или страницу-парковку",
+      "primary": "ошибка 522 cloudflare",
+      "keywords": [
+        "ошибка 522 cloudflare",
+        "редирект отдаёт 522",
+        "cloudflare 525 handshake",
+        "страница парковка регистратора"
+      ],
+      "tags": [
+        "redirects",
+        "dns",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/audit-300-domains-one-script/",
+      "locale": "ru",
+      "title": "Какие из ваших 300 доменов ещё редиректят? Один скрипт и что чинить первым",
+      "primary": "какие домены ещё редиректят",
+      "keywords": [
+        "какие домены ещё редиректят",
+        "скрипт аудита доменов",
+        "ahrefs domain rating api",
+        "аудит доменов cloudflare"
+      ],
+      "tags": [
+        "dns",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/agent-readiness-audit/",
+      "locale": "ru",
+      "title": "Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100",
+      "primary": "аудит готовности сайта для агентов",
+      "keywords": [
+        "аудит готовности сайта для агентов",
+        "llms txt",
+        "content signals robots txt",
+        "cloudflare сканер агентов"
+      ],
+      "tags": [
+        "ai",
+        "cloudflare",
+        "pages"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/count-clicks-on-a-redirect/",
+      "locale": "ru",
+      "title": "Редирект не выполняет JavaScript. Как посчитать клики на редиректе",
+      "primary": "посчитать клик на редиректе",
+      "keywords": [
+        "посчитать клик на редиректе",
+        "аналитика редиректа cloudflare",
+        "analytics engine worker",
+        "клик на редиректе без javascript"
+      ],
+      "tags": [
+        "tracking",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/redirect-200-parked-domains/",
+      "locale": "ru",
+      "title": "Как перенаправить 200 припаркованных доменов на один сайт в Cloudflare",
+      "primary": "редирект припаркованных доменов",
+      "keywords": [
+        "редирект припаркованных доменов",
+        "домены на один сайт",
+        "bulk redirects несколько доменов",
+        "зона на каждый домен"
+      ],
+      "tags": [
+        "dns",
+        "bulk-redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/every-way-to-redirect-on-cloudflare/",
+      "locale": "ru",
+      "title": "Все способы сделать редирект на Cloudflare и где каждый ломается",
+      "primary": "редирект на cloudflare",
+      "keywords": [
+        "редирект на cloudflare",
+        "301 редирект cloudflare",
+        "cloudflare redirect rules",
+        "single redirects и bulk redirects"
+      ],
+      "tags": [
+        "redirects",
+        "cloudflare",
+        "bulk-redirects"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/find-the-redirect-that-drops-your-gclid/",
+      "locale": "ru",
+      "title": "Ваш редирект теряет gclid. Вот тест на 60 секунд",
+      "primary": "редирект теряет gclid",
+      "keywords": [
+        "редирект теряет gclid",
+        "редирект теряет данные о кликах",
+        "google ads click id редирект",
+        "preserve query string cloudflare"
+      ],
+      "tags": [
+        "tracking",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/page-rules-where-every-setting-went/",
+      "locale": "ru",
+      "title": "Page Rules в Cloudflare устарели. Вот куда переехала каждая настройка",
+      "primary": "замена page rules",
+      "keywords": [
+        "замена page rules",
+        "page rules cloudflare",
+        "миграция page rules",
+        "forwarding url page rule"
+      ],
+      "tags": [
+        "page-rules",
+        "redirects",
+        "cloudflare"
+      ]
+    },
+    {
+      "url": "https://ru.301.sh/cloudflare-free-plan-redirect-limits/",
+      "locale": "ru",
+      "title": "Cloudflare: в документации 10 000 Bulk Redirects, а в аккаунте может быть 20",
+      "primary": "лимит bulk redirects",
+      "keywords": [
+        "лимит bulk redirects",
+        "квота bulk redirects free",
+        "cloudflare редирект лимит",
+        "maximum number of items cloudflare"
+      ],
+      "tags": [
+        "bulk-redirects",
+        "limits",
+        "cloudflare"
+      ]
+    }
+  ]
+}

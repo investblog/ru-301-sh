@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'"><!-- Yandex Webmaster ownership of ru.301.sh (2026-09-02). The apex is verified by
+         the TXT record on the zone; the ru host is on GitHub Pages, which serves no
+         headers and has no DNS of its own, so it carries the meta tag. ru target only. --><meta name="yandex-verification" content="8204088dcafa0646"><title>Как проверить готовность к агентам, если сканер не достаёт до сайта</title><meta name="description" content="Внешнему сканеру нужен публичный адрес, поэтому у стейджинга оценки нет вообще. Что меняет перенос проверок в браузер и одно правило, которое делает результат честным."><meta name="keywords" content="проверка готовности сайта в браузере, расширение agent readiness, готовность стейджинга к агентам, agent readiness inspector"><link rel="canonical" href="https://ru.301.sh/audit-agent-readiness-in-the-browser/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="301.sh" href="/rss.xml"><link rel="alternate" hreflang="ru" href="https://ru.301.sh/audit-agent-readiness-in-the-browser/"><link rel="alternate" hreflang="en" href="https://301.sh/audit-agent-readiness-in-the-browser/"><link rel="alternate" hreflang="de" href="https://301.sh/de/agent-readiness-im-browser-pruefen/"><link rel="alternate" hreflang="x-default" href="https://301.sh/audit-agent-readiness-in-the-browser/"><meta property="og:type" content="website"><meta property="og:url" content="https://ru.301.sh/audit-agent-readiness-in-the-browser/"><meta property="og:title" content="Как проверить готовность к агентам, если сканер не достаёт до сайта"><meta property="og:description" content="Внешнему сканеру нужен публичный адрес, поэтому у стейджинга оценки нет вообще. Что меняет перенос проверок в браузер и одно правило, которое делает результат честным."><meta property="og:image" content="https://ru.301.sh/og/ru/audit-agent-readiness-in-the-browser.png"><meta property="og:image:alt" content="Как проверить готовность к агентам, если сканер не достаёт до сайта"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><!-- Theme before first paint. Inline and synchronous on purpose: deferring
+         it would show a dark flash to light-theme readers. --><script>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          /* private mode or storage disabled — the dark default in the markup stands */
+        }
+      })();
+    </script><!-- WebMCP: list_articles / get_article on the browser's model context —
+         the same two tools as /mcp, backed by the same static surface. Apex
+         only: the ru host has neither /posts.json nor /mcp to back them. --><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Как проверить готовность к агентам, если сканер не достаёт до сайта","description":"Внешнему сканеру нужен публичный адрес, поэтому у стейджинга оценки нет вообще. Что меняет перенос проверок в браузер и одно правило, которое делает результат честным.","datePublished":"2026-08-04T12:00:00.000Z","dateModified":"2026-08-04T12:00:00.000Z","keywords":"проверка готовности сайта в браузере, расширение agent readiness, готовность стейджинга к агентам, agent readiness inspector","inLanguage":"ru","mainEntityOfPage":{"@type":"WebPage","@id":"https://ru.301.sh/audit-agent-readiness-in-the-browser/"},"author":{"@type":"Organization","name":"301.sh","url":"https://301.sh"},"publisher":{"@type":"Organization","name":"301.st","url":"https://301.st"}}</script><link rel="stylesheet" href="/_astro/Base.DP0lwrp2.css"></head><body><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none"><symbol id="i-mono-analytics" viewBox="0 0 20 20"><path d="M3.158 14.21 0 17.306V8.421h3.158m5.263 3.853-1.653-1.41-1.505 1.389V4.21h3.158m5.263 6.315-3.158 3.158V0h3.158m2.958 10.326-1.905-1.905H20v5.263L18.116 11.8l-7.59 7.526-3.652-3.179L2.894 20H0l6.81-6.674 3.716 3.137" fill="currentColor"/></symbol><symbol id="i-mono-arrow-right" viewBox="0 0 20 20"><path d="M2.08 8v4h9l-3.5 3.5L10 17.92 17.92 10 10 2.08 7.58 4.5l3.5 3.5z" fill="currentColor"/></symbol><symbol id="i-mono-check" viewBox="0 0 20 20"><path d="M6.75 17.77.54 11.56l2.83-2.83 3.38 3.39 9.88-9.89 2.83 2.83z" fill="currentColor"/></symbol><symbol id="i-mono-chevron-down" viewBox="0 0 24 24"><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></symbol><symbol id="i-mono-clock" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7H11V13L15.75,15.85L16.5,14.62L12.5,12.25V7Z" fill="currentColor"/></symbol><symbol id="i-mono-directions-fork" viewBox="0 0 20 20"><path d="M1 1.5V10l3-3 3 3.5c1 1 1 2 1 2v6h4v-7s0-1-.53-2-1.47-2-1.47-2L7 4.08 9.5 1.5m6.5 0-4.46 4.47.46.53s.93 1 1.47 2c.21.4.33.79.4 1.13L19 4.5" fill="currentColor"/></symbol><symbol id="i-mono-directions" viewBox="0 0 20 20"><path d="M12.003 12.503v-2.5h-4v3h-2v-4a1 1 0 0 1 1-1h5v-2.5l3.5 3.5m4.21.29-9-9h-.01a.996.996 0 0 0-1.41 0l-9 9c-.39.39-.39 1.03 0 1.42l9 9c.39.38 1.02.39 1.42 0l9-9c.39-.39.39-1.03 0-1.42" fill="currentColor"/></symbol><symbol id="i-mono-dns" viewBox="0 0 20 20"><path d="M10.005 0C15.5 0 20 4.5 20 10.006c0 .585-.062 1.16-.154 1.715a5.7 5.7 0 0 0-1.921-.637c.051-.35.082-.708.082-1.078 0-.699-.102-1.367-.267-2.004h-3.38c.083.657.144 1.316.144 2.004 0 .534-.041 1.068-.103 1.592A6 6 0 0 0 11.813 14H8.095c.41 1.428 1.078 2.764 1.91 3.966.4-.575.75-1.182 1.068-1.819a6 6 0 0 0-.072.853c0 1.027.258 2.002.72 2.845-.555.092-1.13.154-1.716.154C4.499 20 0 15.512 0 10.006S4.51 0 10.005 0m7.276 13.04c.07 0 .14.07.14.14l.14.93c.21.08.43.22.64.36l.85-.36c.07 0 .21 0 .21.07l.71 1.21c.07.07 0 .14-.07.21l-.78.57v.7l.78.57c.07 0 .07.07 0 .14l-.71 1.21c-.07.07-.14.07-.21.07l-.85-.28c-.21.15-.36.22-.57.36l-.14.92c0 .07-.07.14-.14.14h-1.42c-.07 0-.14-.07-.21-.14l-.14-.92c-.21-.08-.43-.22-.57-.36l-.85.36c-.07 0-.14 0-.21-.07l-.71-1.21c-.07-.07 0-.14.07-.21l.78-.57v-.71l-.78-.57c-.07-.07-.07-.14-.07-.21l.71-1.21c.07-.07.14-.07.21-.07l.85.36c.21-.15.36-.22.57-.36l.14-.93c0-.07.07-.14.21-.14zm-14.2.961a8 8 0 0 0 4.315 3.564c-.596-1.109-1.048-2.31-1.397-3.564zm13.41 1.379c-.57 0-1.07.5-1.07 1.07s.5 1.07 1.07 1.07 1.07-.5 1.07-1.07-.5-1.07-1.07-1.07M2.26 8.002a8 8 0 0 0-.257 2.004c0 .688.092 1.355.257 1.992h3.38a16 16 0 0 1-.145-1.992c0-.688.062-1.347.145-2.004zm5.403 0a13 13 0 0 0-.165 2.004c0 .678.062 1.335.165 1.992h4.674c.092-.657.164-1.304.164-1.992s-.072-1.357-.164-2.004zm-.267-5.567A7.92 7.92 0 0 0 3.08 5.999h2.918c.35-1.253.8-2.445 1.397-3.564m2.609-.4a13.5 13.5 0 0 0-1.91 3.964h3.821c-.41-1.428-1.09-2.773-1.911-3.965m2.589.4a16 16 0 0 1 1.376 3.564h2.948a7.98 7.98 0 0 0-4.324-3.564" fill="currentColor"/></symbol><symbol id="i-mono-layers" viewBox="0 0 20 20"><path d="m10 14.465 7.36-5.73L19 7.465l-9-7-9 7 1.63 1.27m7.37 8.27-7.38-5.73L1 12.535l9 7 9-7-1.63-1.27z" fill="currentColor"/></symbol><symbol id="i-mono-lock" viewBox="0 0 20 20"><path d="M10 14.714a1.714 1.714 0 1 0 0-3.428 1.714 1.714 0 0 0 0 3.428M15.143 7a1.714 1.714 0 0 1 1.714 1.714v8.572A1.714 1.714 0 0 1 15.143 19H4.857a1.714 1.714 0 0 1-1.714-1.714V8.714C3.143 7.763 3.914 7 4.857 7h.857V5.286a4.286 4.286 0 1 1 8.572 0V7zM10 2.714a2.57 2.57 0 0 0-2.571 2.572V7h5.142V5.286A2.57 2.57 0 0 0 10 2.714" fill="currentColor"/></symbol><symbol id="i-mono-magnify" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" fill="currentColor"/></symbol><symbol id="i-mono-open-in-new" viewBox="0 0 20 20"><path d="M12 1v2h3.59l-9.83 9.83 1.41 1.41L17 4.41V8h2V1m-2 16H3V3h7V1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z" fill="currentColor"/></symbol><symbol id="i-mono-pages" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z" fill="currentColor"/></symbol><symbol id="i-mono-refresh" viewBox="0 0 20 20"><path d="M15.65 4.35A7.96 7.96 0 0 0 10 2a8 8 0 1 0 0 16c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 10 16a6 6 0 1 1 0-12c1.66 0 3.14.69 4.22 1.78L11 9h7V2z" fill="currentColor"/></symbol><symbol id="i-mono-robot" viewBox="0 0 24 24"><path d="M17.5 15.5C17.5 16.61 16.61 17.5 15.5 17.5S13.5 16.61 13.5 15.5 14.4 13.5 15.5 13.5 17.5 14.4 17.5 15.5M8.5 13.5C7.4 13.5 6.5 14.4 6.5 15.5S7.4 17.5 8.5 17.5 10.5 16.61 10.5 15.5 9.61 13.5 8.5 13.5M23 15V18C23 18.55 22.55 19 22 19H21V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V19H2C1.45 19 1 18.55 1 18V15C1 14.45 1.45 14 2 14H3C3 10.13 6.13 7 10 7H11V5.73C10.4 5.39 10 4.74 10 4C10 2.9 10.9 2 12 2S14 2.9 14 4C14 4.74 13.6 5.39 13 5.73V7H14C17.87 7 21 10.13 21 14H22C22.55 14 23 14.45 23 15M21 16H19V14C19 11.24 16.76 9 14 9H10C7.24 9 5 11.24 5 14V16H3V17H5V20H19V17H21V16Z" fill="currentColor"/></symbol><symbol id="i-mono-sign-yield" viewBox="0 0 20 20"><path d="M18.496 2H1.505c-1.1 0-1.9 1.3-1.3 2.3l8.496 14.9c.3.5.8.8 1.299.8.5 0 1-.3 1.3-.8l8.495-14.9c.6-1-.2-2.3-1.3-2.3M10 17.5 2.304 4h15.292zm-5.097-12h10.194L10 14.5z" fill="currentColor"/></symbol><symbol id="i-mono-sun" viewBox="0 0 20 20"><path d="m2.318 16.446 1.282 1.28L5.236 16.1l-1.29-1.29M10 4.544A5.46 5.46 0 0 0 4.545 10 5.46 5.46 0 0 0 10 15.454 5.46 5.46 0 0 0 15.454 10 5.453 5.453 0 0 0 10 4.545m7.273 6.364H20V9.091h-2.727m-2.51 7.009 1.637 1.627 1.282-1.282-1.627-1.636m1.627-11.173L16.4 2.364 14.764 3.99l1.29 1.29M10.91 0H9.091v2.727h1.818M5.236 3.991 3.6 2.364 2.318 3.636l1.627 1.646zM0 10.909h2.727V9.091H0m10.91 8.182H9.09V20h1.82" fill="currentColor"/></symbol><symbol id="i-mono-web-scan" viewBox="0 0 20 20"><path d="M2 18h3v2H1.5c-.39 0-.74-.16-1.04-.46S0 18.89 0 18.5V15h2zm18-3v3.5c0 .39-.16.74-.46 1.04s-.65.46-1.04.46H15v-2h3v-3zM10.01 2.13c1.03 0 2.05.2 3.01.6a8 8 0 0 1 2.55 1.71 7.9 7.9 0 0 1 1.71 2.55c.4.95.6 1.98.6 3.01v.01c0 2.09-.83 4.09-2.31 5.57a7.87 7.87 0 0 1-8.58 1.71 8 8 0 0 1-2.55-1.71 7.87 7.87 0 0 1-2.31-5.57c0-4.34 3.53-7.88 7.88-7.88M8.5 13.15c.32 1.13.85 2.17 1.5 3.12h.01c.65-.95 1.18-1.99 1.5-3.12zm-3.95 0a6.32 6.32 0 0 0 3.4 2.8c-.47-.87-.82-1.82-1.1-2.8zm8.58 0c-.26.98-.62 1.93-1.09 2.8a6.3 6.3 0 0 0 3.41-2.8zM3.9 8.42c-.12.51-.2 1.03-.2 1.58s.07 1.08.2 1.58h2.66c-.06-.52-.11-1.04-.11-1.58s.05-1.06.11-1.58zm4.25 0c-.08.52-.13 1.04-.13 1.58s.05 1.06.13 1.58h3.69c.07-.52.13-1.04.13-1.58s-.06-1.07-.13-1.58zm5.29 0c.06.52.11 1.04.11 1.58s-.05 1.06-.11 1.58h2.66c.12-.51.2-1.03.2-1.58s-.07-1.08-.2-1.58zM7.95 4.05a6.2 6.2 0 0 0-3.4 2.8h2.3c.27-.98.63-1.93 1.1-2.8m2.04-.33c-.65.95-1.18 2-1.5 3.13h3.01c-.32-1.13-.85-2.19-1.5-3.13zm2.05.33c.48.87.84 1.82 1.09 2.8h2.32c-.76-1.3-1.96-2.3-3.41-2.8M5 2H2v3H0V1.5C0 1.11.16.76.46.46S1.11 0 1.5 0H5zm13.5-2c.39 0 .74.16 1.04.46s.46.65.46 1.04V5h-2V2h-3V0z" fill="currentColor"/></symbol><symbol id="i-brand-301" viewBox="0 0 26 26"><path d="M13.295 18.57c-.013 1.026-.074 2.047-.438 3.026-.681 1.828-2.003 2.903-3.893 3.284a8.3 8.3 0 0 1-1.56.146c-2.42.024-4.839.025-7.259.034H0v-5.454h.214c2.22.01 4.442.017 6.662.003a4 4 0 0 0 1.058-.16 1.66 1.66 0 0 0 1.22-1.546c.034-.746.052-1.494.031-2.24-.028-1.03-.769-1.766-1.8-1.803-.854-.03-1.71-.032-2.565-.035-1.536-.005-3.072 0-4.607-.008H0V9.5h.196c2.104 0 4.208.005 6.313-.007.307-.002.628-.053.917-.154.608-.212.98-.81.986-1.5q.003-.573 0-1.146c-.002-.878-.595-1.475-1.467-1.475H.034V.936h.172C3.289.947 6.37.943 9.454.95c.638.001 1.283.03 1.86.35.68.38 1.116.956 1.157 1.743.049.917.039 1.837.04 2.755.001.645-.004 1.29-.036 1.934-.045.886-.27 1.72-.849 2.42-.472.573-1.058.98-1.794 1.146-.01.002-.016.014-.041.036.089.018.167.031.243.05 1.595.404 2.635 1.372 2.984 3.001.128.598.203 1.213.24 1.824.047.785.048 1.574.037 2.361m8.421.051c-.002 1.014-.14 2.011-.596 2.933-.86 1.734-2.254 2.807-4.108 3.298-.848.224-1.712.225-2.59.2v-4.084c.265-.02.528-.026.788-.058 1.106-.136 1.82-.776 2.238-1.78.278-.667.396-1.375.41-2.089.04-1.84.053-3.68.064-5.52a60 60 0 0 0-.035-2.542c-.03-.8-.128-1.591-.436-2.343-.431-1.049-1.256-1.616-2.387-1.628-.429-.005-.857-.001-1.293-.001V.955c.018-.007.033-.018.048-.018.776.01 1.556-.023 2.327.043a5.94 5.94 0 0 1 3.612 1.601 5.94 5.94 0 0 1 1.857 3.404c.066.379.104.767.104 1.151q.01 5.869-.003 11.738zM26 .96v24.087q-.08.008-.152.01-1.155.003-2.312 0-.145 0-.286-.033a.38.38 0 0 1-.31-.325c-.017-.112-.016-.227-.016-.341q.002-11.388-.006-22.775c0-.44.185-.619.62-.621q.94-.004 1.883-.002z" fill="#4da3ff"/></symbol><symbol id="i-brand-301sh" viewBox="0 0 320 162"><g clip-path="url(#a)" fill="currentColor"><path d="M76.12 133.908c-2.128 8.731-7.304 16.72-15.067 21.412-4.249 2.564-9.038 4.088-13.923 4.886-6.248 1.016-12.754.709-19.075.742L0 161.052v-36.367h.435l23.783.041c1.733-.008 3.483.008 5.224-.033 5.845-.153 12.915.516 17.462-3.926 3.45-3.378 3.338-7.82 3.418-12.278q.059-3.541.08-7.094c.017-4.346-.233-8.215-3.458-11.505-3.345-3.418-7.304-3.7-11.835-3.74-3.047-.033-6.11-.057-9.158-.073L0 86.02V57.183h23.839c3.91-.04 8.288.113 12.157-.435 2.112-.29 4.587-1.395 6.055-2.878 3.805-3.813 3.007-9.287 3.087-14.165.057-3.007-.588-6.24-2.78-8.392-1.154-1.121-3.153-2.233-4.741-2.419-3.805-.427-8.385-.218-12.27-.218H.265L.258.073h37.907L48.718.065c7.288.008 13.93-.33 19.534 5.16 4.321 4.224 4.063 8.086 4.192 13.697.073 2.886.12 5.764.129 8.65 0 3.942-.032 7.893-.105 11.843-.17 9.118-.475 16.76-7.344 23.815-3.338 3.418-6.377 4.732-10.876 6.078 7.369 1.774 14.036 4.74 18.172 11.496a28 28 0 0 1 3.337 8.127c2.564 10.513 2.935 34.392.363 44.977M214.986.17a2 2 0 0 0 .21-.033c8.553-.604 18.066 1.298 24.653 7.038 6.772 5.894 9.763 14.842 10.335 23.55.258 3.95.129 7.98.153 11.963-.04 2.572.162 5.208-.072 7.764-.073.79-.548 1.959-1.201 2.418-.476.339-1.556.589-2.121.629-2.354.153-4.756.089-7.118.089l-13.827-.025.017-10.416c0-4.474.717-11.94-2.467-15.527-2.483-2.797-7.853-2.95-10.545-.322-2.314 2.257-2.741 5.998-2.749 9.094-.008 4.651-.162 9.432.854 13.995 1.83 8.457 9.489 12.956 16.035 17.712 4.644 3.37 8.651 6.087 12.754 10.287 11.9 12.19 10.827 27.709 10.65 43.349-.113 10.69-2.177 24.209-10.214 31.796-6.958 6.562-15.1 7.658-24.186 7.473-31.232-2.943-30.49-31.119-30.321-55.151.016-2.701-.145-5.515 3.378-5.7 2.467-.129 4.861-.073 7.296-.064h13.689c.057 7.425-.08 14.93.073 22.307.113 5.474 2.185 11.746 8.747 11.262 1.532-.113 3.434-.895 4.329-2.233 3.918-5.869 2.628-14.818 2.556-21.606-.573-11.359-7.345-17.438-16.035-23.557-3.257-2.29-7.127-5.337-10.255-7.9-8.836-7.24-12.73-15.705-13.576-27.032-.355-3.442-.065-6.997-.194-10.432-.766-20.872 5.523-38.906 29.152-40.72zM80.925.056c10.239-.024 19.155-.725 28.829 3.515a41.14 41.14 0 0 1 21.453 22.413 41 41 0 0 1 2.66 11.738c.347 4.272.137 11.028.137 15.527v54.216c0 4.466.017 8.908-.08 13.374-.355 17.221-10.602 31.184-26.516 37.351-8.48 2.959-13.286 3.023-22.057 2.854 0-8.876.226-18.518-.024-27.322 5.941-.266 11.174-.701 15.559-5.191 7.014-7.184 7.256-16.64 7.377-25.903l.169-9.199.234-25.975c0-3.572-.056-7.151-.161-10.722-.242-8.45-.758-18.495-7.111-24.928-5.45-5.514-13.318-4.62-20.485-4.595L80.925.065zm67.954.13 8.851-.04c1.661 0 3.515-.09 5.144.128.725.097 1.701.484 2.233 1.008.726.71.903 1.91.903 2.886.016 10.61.008 21.235.008 31.837v114.809c0 2.459.024 4.942-.073 7.409-.032.911-.266 1.177-.878 1.87-1.177 1.314-4.047 1.016-5.821 1h-9.271c-1.572.008-3.354.072-4.902-.113-.669-.081-1.733-.468-2.225-.935-.75-.702-.862-1.943-.862-2.919a10695 10695 0 0 1-.008-33.029V10.021c0-2.257-.017-4.555.056-6.82.024-.847.468-1.298 1.016-1.927 1.209-1.395 3.998-1.08 5.853-1.064zm171.105 3.885c0-.975-.177-2.176-.903-2.886-.532-.524-1.5-.91-2.233-1.008-1.637-.21-3.483-.129-5.144-.129l-8.852.04c-1.16 0-2.684-.136-3.958.114-.314.016-.629.016-.943.032-1.782.097-3.08 1.346-3.177 3.128-.12 2.12-.08 4.248-.08 6.377l.016 11.835-.016 40.817h-14.431V21.96l.016-11.884c0-2.209.065-4.474-.08-6.643C280.07 1.556 278.925.34 277.03.25c-5.651-.258-11.415 0-17.075-.105-2.588-.048-4.031 1.548-4.023 4.063-.016 2.846.008 5.692.008 8.538v136.423c0 2.822-.024 5.676.049 8.489-.008.782.371 1.854.903 2.419.419.435 1.668.87 2.257.886 5.829.226 11.706.033 17.551.057.999-.081 2.096-.331 2.781-1.113.46-.532.58-1.185.637-1.838.25-3.265.113-6.723.113-9.988v-16.64l.024-45.445h14.455v63.899c0 2.716-.065 5.457.064 8.174.146 3.032 3.153 3.032 5.434 3.015 2.588-.016 5.176-.024 7.764-.04v-.064h5.256c1.774.008 4.644.314 5.821-1 .612-.685.846-.959.878-1.87.089-2.467.065-4.942.065-7.409V35.908c0-10.602 0-21.227-.008-31.837M171.5 133.553c2.274-.121 4.676 0 6.966-.056 1.12-.032 4.111-.218 4.861.629.169.693.258 1.378.29 2.096.105 2.41.291 23.484-.266 24.331-.242.37-.5.379-.903.475-1.943.008-10.674.21-11.923-.209a.86.86 0 0 1-.186-.371c-.475-2.016-.548-25.363.041-26.363.419-.403.572-.411 1.128-.54z"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h320v161.109H0z"></path></clipPath></defs></symbol><symbol id="i-brand-bluesky" viewBox="0 0 24 24"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026" fill="currentColor"/></symbol><symbol id="i-brand-cloudflare" viewBox="0 0 24 24"><path d="M19.027 11.311c-.056 0-.106.042-.127.097l-.337 1.156c-.148.499-.092.956.154 1.295.226.311.605.491 1.063.512l1.842.11a.16.16 0 0 1 .134.07.2.2 0 0 1 .021.152.24.24 0 0 1-.204.153l-1.92.11c-1.041.049-2.16.873-2.553 1.884l-.141.353c-.028.069.021.138.098.138h6.598a.17.17 0 0 0 .17-.125 4.7 4.7 0 0 0 .175-1.26c0-2.561-2.124-4.652-4.734-4.652-.077 0-.162 0-.24.007" fill="#fbad41"/><path d="M16.509 16.767c.148-.499.091-.956-.155-1.295-.225-.311-.605-.492-1.062-.512l-8.659-.111a.16.16 0 0 1-.134-.07.2.2 0 0 1-.02-.152.24.24 0 0 1 .203-.152l8.737-.11c1.034-.05 2.159-.873 2.553-1.884l.5-1.28a.27.27 0 0 0 .013-.167c-.562-2.506-2.834-4.375-5.55-4.375-2.504 0-4.628 1.592-5.388 3.8a2.6 2.6 0 0 0-1.793-.49c-1.203.117-2.167 1.065-2.286 2.25a2.6 2.6 0 0 0 .063.878C1.57 13.153 0 14.731 0 16.677q.002.26.035.519a.17.17 0 0 0 .169.145h15.981a.22.22 0 0 0 .204-.152z" fill="#f6821f"/></symbol><symbol id="i-brand-devto" viewBox="0 0 24 24"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z" fill="currentColor"/></symbol><symbol id="i-brand-mastodon" viewBox="0 0 24 24"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z" fill="currentColor"/></symbol><symbol id="i-brand-telegram" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="currentColor"/></symbol></svg>
+<!-- Static texture in the desktop gutters. casino-platform animates the same
+         field with an 8 KB script; on a reading site a generated SVG gets the
+         look for no JavaScript. --><div id="trigons-bg" aria-hidden="true"></div><div class="page"><a class="skip-link" href="#main">Перейти к содержимому</a><header class="site-header" data-pagefind-ignore><div class="container site-header__inner"><a class="site-header__brand" href="/" aria-label="Главная 301.sh"><svg class="icon" viewBox="0 0 320 162" role="img" aria-label="301.sh"><use href="#i-brand-301sh"></use></svg></a><nav class="site-header__nav" aria-label="Main"><!-- No "Articles" link: the wordmark to its left already goes to the
+                 index, and the space it took is now the search field. --><div class="search-inline"><svg class="icon icon--sm search-inline__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg><input class="search-input" id="search-input-inline" type="search" placeholder="Искать по статьям" aria-label="Поиск" autocomplete="off" spellcheck="false"><kbd class="search-inline__kbd">⌘K</kbd><div class="search-results search-results--panel" id="search-results-inline" aria-live="polite"></div></div><button class="search-trigger" type="button" id="search-trigger" aria-label="Поиск"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg></button><dialog class="search-dialog" id="search-dialog" aria-label="Поиск"><form class="search-form" method="dialog" onsubmit="return false"><svg class="icon icon--sm search-form__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg><input class="search-input" id="search-input-dialog" type="search" placeholder="Искать по статьям" aria-label="Поиск" autocomplete="off" spellcheck="false"><button class="search-close" type="button" id="search-close" aria-label="Закрыть">Esc</button></form><div class="search-results" id="search-results-dialog" aria-live="polite"></div></dialog><script>(function(){const emptyText = "Ничего не найдено.";
+
+  (function () {
+    const dialog = document.getElementById('search-dialog');
+    const trigger = document.getElementById('search-trigger');
+    const inline = document.getElementById('search-input-inline');
+
+    let pagefind = null;
+    let loading = null;
+
+    /** The runtime is a script plus a WASM index. Fetch it on first use, never before. */
+    function load() {
+      if (pagefind) return Promise.resolve(pagefind);
+      if (loading) return loading;
+      loading = import('/pagefind/pagefind.js')
+        .then(async (mod) => {
+          if (typeof mod.init === 'function') await mod.init();
+          pagefind = mod;
+          return mod;
+        })
+        .catch(() => null);
+      return loading;
+    }
+
+    function render(results, hits) {
+      results.innerHTML = '';
+      if (hits.length === 0) {
+        const p = document.createElement('p');
+        p.className = 'search-empty';
+        p.textContent = emptyText;
+        results.append(p);
+        return;
+      }
+      for (const hit of hits) {
+        const a = document.createElement('a');
+        a.className = 'search-hit';
+        a.href = hit.url;
+        const title = document.createElement('span');
+        title.className = 'search-hit__title';
+        title.textContent = hit.meta?.title ?? hit.url;
+        const excerpt = document.createElement('span');
+        excerpt.className = 'search-hit__excerpt';
+        // Pagefind marks matches with <mark>; this is its own output, not user input.
+        excerpt.innerHTML = hit.excerpt ?? '';
+        a.append(title, excerpt);
+        results.append(a);
+      }
+    }
+
+    /** Wire one input to one results container. Both surfaces use this. */
+    function wire(input, results) {
+      if (!input || !results) return;
+      let timer;
+      let seq = 0;
+
+      input.addEventListener('focus', load, { once: true });
+      input.addEventListener('input', () => {
+        clearTimeout(timer);
+        const query = input.value.trim();
+        if (query.length < 2) {
+          results.innerHTML = '';
+          return;
+        }
+        timer = setTimeout(async () => {
+          const mine = ++seq;
+          const api = await load();
+          if (!api || mine !== seq) return;
+          const search = await api.search(query);
+          if (mine !== seq) return;
+          const hits = await Promise.all(search.results.slice(0, 6).map((r) => r.data()));
+          if (mine === seq) render(results, hits);
+        }, 160);
+      });
+    }
+
+    wire(inline, document.getElementById('search-results-inline'));
+    wire(document.getElementById('search-input-dialog'), document.getElementById('search-results-dialog'));
+
+    // Clicking away closes the inline panel. The panel is only in the layout
+    // while it has results, so emptying it is enough to dismiss.
+    document.addEventListener('click', (e) => {
+      const box = document.querySelector('.search-inline');
+      if (box && !box.contains(e.target)) {
+        document.getElementById('search-results-inline').innerHTML = '';
+      }
+    });
+
+    trigger?.addEventListener('click', () => {
+      dialog.showModal();
+      document.getElementById('search-input-dialog').focus();
+      load();
+    });
+    document.getElementById('search-close')?.addEventListener('click', () => dialog.close());
+
+    // One shortcut, whichever surface is on screen. offsetParent is null when
+    // the inline input is display:none, which is exactly the mobile case.
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (inline && inline.offsetParent !== null) {
+          inline.focus();
+          inline.select();
+        } else if (dialog.open) {
+          dialog.close();
+        } else {
+          trigger?.click();
+        }
+      }
+      if (e.key === 'Escape' && inline && document.activeElement === inline) {
+        inline.value = '';
+        document.getElementById('search-results-inline').innerHTML = '';
+        inline.blur();
+      }
+    });
+  })();
+})();</script><a href="/about/">О сайте</a><a class="link-external" href="https://301.st" rel="noopener">301.st<svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-open-in-new"></use></svg></a><details class="lang-switch" data-lang-switch><summary class="lang-switch__trigger" title="Сменить язык" aria-label="Сменить язык"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%230052B4%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23D80027%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-switch__label">Русский</span><svg class="icon lang-switch__chevron" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-chevron-down"></use></svg></summary><div class="lang-menu"><a class="lang-menu__item" href="https://301.sh/audit-agent-readiness-in-the-browser/" hreflang="en" lang="en"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cg%20fill%3D%22%23FFF%22%3E%3Cpath%20d%3D%22M0%200h513v341.3H0V0z%22%2F%3E%3Cpath%20d%3D%22M311.7%20230%20513%20341.3v-31.5L369.3%20230h-57.6zM200.3%20111.3%200%200v31.5l143.7%2079.8h56.6z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23012169%22%3E%3Cpath%20d%3D%22M393.8%20230%20513%20295.7V230H393.8zm-82.1%200L513%20341.3v-31.5L369.3%20230h-57.6zm146.9%20111.3-147-81.7v81.7h147zM90.3%20230%200%20280.2V230h90.3zm110%2014.2v97.2H25.5l174.8-97.2zM118.2%20111.3%200%2045.6v65.7h118.2zm82.1%200L0%200v31.5l143.7%2079.8h56.6zM53.4%200l147%2081.7V0h-147zM421.7%20111.3%20513%2061.1v50.2h-91.3zm-110-14.2V0h174.9L311.7%2097.1z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23c8102e%22%3E%3Cpath%20d%3D%22M288%200h-64v138.7H0v64h224v138.7h64V202.7h224v-64H288V0z%22%2F%3E%3Cpath%20d%3D%22M311.7%20230%20513%20341.3v-31.5L369.3%20230h-57.6zM143.7%20230%200%20309.9v31.5L200.3%20230h-56.6zM200.3%20111.3%200%200v31.5l143.7%2079.8h56.6zM368.3%20111.3%20513%2031.5V0L311.7%20111.3h56.6z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">English</span></a><a class="lang-menu__item" href="https://301.sh/de/agent-readiness-im-browser-pruefen/" hreflang="de" lang="de"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23d00%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23ffce00%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">Deutsch</span></a><a class="lang-menu__item is-active" href="/audit-agent-readiness-in-the-browser/" hreflang="ru" lang="ru" aria-current="page"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%230052B4%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23D80027%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">Русский</span></a></div></details><script type="module">var e=document.querySelector(`details[data-lang-switch]`);e instanceof HTMLDetailsElement&&(document.addEventListener(`click`,t=>{e.open&&t.target instanceof Node&&!e.contains(t.target)&&(e.open=!1)}),e.addEventListener(`keydown`,t=>{t.key===`Escape`&&e.open&&(e.open=!1,e.querySelector(`summary`)?.focus())}));</script><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Переключить тему"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-sun"></use></svg></button></nav></div></header><main class="site-main" id="main"><div class="container container--reading"><article><h1 class="page-title">Как проверить готовность к агентам, если сканер не достаёт до сайта</h1><div class="article-meta"><span>Опубликовано <time datetime="2026-08-04T12:00:00.000Z">2026-08-04</time></span><span class="article-meta__verified"><svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-check"></use></svg>Данные Cloudflare проверены<time datetime="2026-08-04T00:00:00.000Z">2026-08-04</time></span><span class="article-meta__tags"><a class="tag" href="/tags/ai/">ai</a><a class="tag" href="/tags/browser/">browser</a></span></div><!-- data-pagefind-body marks what Pagefind indexes. Without it the index
+           fills with header and footer text from every page. --><div class="prose article-body" data-pagefind-body><p>Cloudflare держит сканер, который оценивает домен по готовности к ИИ-агентам. В июле мы прошли
+<a href="/agent-readiness-audit/">все двадцать одну его проверку</a>: какие четыре стоило внедрить и
+почему восемь провалов были правильным ответом.</p>
+<p>Вы наводите его на свой сайт, получаете оценку и чините то, на что он указал. А потом пробуете
+проверить ту версию, которая и важна, — стейджинг с самой правкой, сайт, который ещё не
+запущен, страницы за логином, — и наводить сканер оказывается не на что.</p>
+<p>Это не дефект сканера. Он работает в чужом дата-центре, а значит может отвечать только про те
+origin, до которых этот дата-центр дотягивается. Оба отказа — в одном <code>curl</code>, снято
+4 августа 2026:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ curl -sS -X POST https://isitagentready.com/api/scan \</span></span>
+<span class="line"><span>    -H 'content-type: application/json' -d '{"url":"http://localhost:3000"}'</span></span>
+<span class="line"><span>{"error":"Invalid URL provided"}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>$ curl -sS -X POST https://isitagentready.com/api/scan \</span></span>
+<span class="line"><span>    -H 'content-type: application/json' -d '{"url":"https://staging.301.sh"}'</span></span>
+<span class="line"><span>{"url":"https://staging.301.sh","scannedAt":"2026-08-04T18:31:38.462Z",</span></span>
+<span class="line"><span> "siteError":{"httpStatus":530,"statusText":"","bodyPreview":null,</span></span>
+<span class="line"><span> "retryAfter":null,"server":"cloudflare"}}</span></span></code></pre>
+<p>Локальный адрес отвергается сразу. Хост, который сканер не может разрезолвить, возвращает
+ошибку сайта вместо оценки. Не низкий балл — балла нет вовсе.</p>
+<p>Весит это больше, чем звучит, из-за того, когда именно вам нужен ответ. Провести этот сайт с
+Level 1 до Level 5 означало сначала пачку статических файлов, потом сервер <code>/mcp</code>, потом
+DNS-записи — и каждый из этих шагов был сначала деплоем в прод, а потом сканом. Опубликовать,
+затем узнать. Для редиректа вы бы такую петлю не приняли никогда.</p>
+<p>Второе место, где можно гонять те же проверки, — браузер, а он достаёт туда же, куда достаёте
+вы. Дальше — что это меняет, чего стоит и какое одно правило решает, есть ли у результата цена.</p>
+<h2 id="что-есть-у-браузера-и-чего-нет-у-дата-центра">Что есть у браузера и чего нет у дата-центра</h2>
+<p>Три вещи, и очевидна из них только первая.</p>
+<p><strong>Достижимость.</strong> <code>localhost:5173</code>, стейджинг за VPN, внутренний инструмент, домен, у которого
+DNS ещё не публичный. Если вкладка грузится — аудит идёт.</p>
+<p><strong>Сессия.</strong> Ваши куки прикладываются к запросу самой страницы, поэтому сайт, показывающий
+анонимному посетителю стену логина, оценивается по тому, что реально получает залогиненный
+клиент.</p>
+<p><strong>Среда исполнения внутри страницы.</strong> Часть того, что потребляет агент, — вообще не HTTP-ответ.
+WebMCP отдаёт инструменты через <code>document.modelContext</code> внутри страницы, после того как
+отработали скрипты. HTTP-проба снаружи этого не видит, а скрипт в странице видит.</p>
+<h2 id="правило-которое-держит-браузерный-аудит-честным">Правило, которое держит браузерный аудит честным</h2>
+<p>Сессия — она же и ловушка, и разобраться с этим стоит до того, как вы напишете свой скрипт,
+каким бы инструментом вы ни пользовались.</p>
+<p>Аудит готовности к агентам тянет два очень разных класса вещей. Есть страница, которой законно
+жить за логином. И есть машинные файлы — <code>robots.txt</code>, карта сайта, <code>llms.txt</code>, всё под
+<code>/.well-known/</code>, — которые публичны по своей природе, потому что у клиента, который их читает,
+нет аккаунта и никогда не будет.</p>
+<p>Пошлёте свою сессию и туда и туда — аттестуете сайт, которого не видит никто, кроме вас.
+Документ под <code>/.well-known/</code>, отвечающий только на аутентифицированные запросы, — это документ,
+с которого агент получит 401 или страницу логина. То, что у вас в браузере он проходит, не
+говорит ничего правдивого.</p>
+<p>Поэтому разделение идёт по запросу, а не по скану:</p>
+<table>
+<thead>
+<tr>
+<th>Что запрашивается</th>
+<th>Credentials</th>
+<th>Почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сама страница</td>
+<td><code>include</code></td>
+<td>Ей можно быть за логином, и именно этот случай внешний сканер не закрывает</td>
+</tr>
+<tr>
+<td><code>Accept: text/markdown</code> на странице</td>
+<td><code>include</code></td>
+<td>Тот же адрес, та же сессия, другое представление</td>
+</tr>
+<tr>
+<td><code>robots.txt</code>, <code>sitemap.xml</code></td>
+<td><code>omit</code></td>
+<td>Публичные машинные файлы — судить их надо так, как их получает краулер</td>
+</tr>
+<tr>
+<td><code>llms.txt</code>, <code>llms-full.txt</code></td>
+<td><code>omit</code></td>
+<td>Так же</td>
+</tr>
+<tr>
+<td>Всё под <code>/.well-known/</code></td>
+<td><code>omit</code></td>
+<td>Документы discovery читают клиенты без аккаунта</td>
+</tr>
+</tbody>
+</table>
+<figure class="diagram" aria-label="Один скан, две политики учётных данных"><div class="diagram__canvas"><svg data-diagram="5e14fb77e31570b2" id="d-5e14fb77e31570b2" width="562" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="368" viewBox="0 0 562 368" role="graphics-document document" aria-roledescription="flowchart-v2" style="background-color: transparent;"><style>#d-5e14fb77e31570b2{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;fill:var(--text-main, #e7e9ee);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#d-5e14fb77e31570b2 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#d-5e14fb77e31570b2 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#d-5e14fb77e31570b2 .error-icon{fill:var(--bg, var(--bg, #111111));}#d-5e14fb77e31570b2 .error-text{fill:var(--text-main, #e7e9ee);stroke:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .edge-thickness-normal{stroke-width:1px;}#d-5e14fb77e31570b2 .edge-thickness-thick{stroke-width:3.5px;}#d-5e14fb77e31570b2 .edge-pattern-solid{stroke-dasharray:0;}#d-5e14fb77e31570b2 .edge-thickness-invisible{stroke-width:0;fill:none;}#d-5e14fb77e31570b2 .edge-pattern-dashed{stroke-dasharray:3;}#d-5e14fb77e31570b2 .edge-pattern-dotted{stroke-dasharray:2;}#d-5e14fb77e31570b2 .marker{fill:var(--text-subtle, #8b8f98);stroke:var(--text-subtle, #8b8f98);}#d-5e14fb77e31570b2 .marker.cross{stroke:var(--text-subtle, #8b8f98);}#d-5e14fb77e31570b2 svg{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;}#d-5e14fb77e31570b2 p{margin:0;}#d-5e14fb77e31570b2 .label{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .cluster-label text{fill:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .cluster-label span{color:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .cluster-label span p{background-color:transparent;}#d-5e14fb77e31570b2 .label text,#d-5e14fb77e31570b2 span{fill:var(--text-main, #e7e9ee);color:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .node rect,#d-5e14fb77e31570b2 .node circle,#d-5e14fb77e31570b2 .node ellipse,#d-5e14fb77e31570b2 .node polygon,#d-5e14fb77e31570b2 .node path{fill:var(--bg-soft, #1f2229);stroke:var(--border-strong, #3d4350);stroke-width:1px;}#d-5e14fb77e31570b2 .rough-node .label text,#d-5e14fb77e31570b2 .node .label text,#d-5e14fb77e31570b2 .image-shape .label,#d-5e14fb77e31570b2 .icon-shape .label{text-anchor:middle;}#d-5e14fb77e31570b2 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#d-5e14fb77e31570b2 .rough-node .label,#d-5e14fb77e31570b2 .node .label,#d-5e14fb77e31570b2 .image-shape .label,#d-5e14fb77e31570b2 .icon-shape .label{text-align:center;}#d-5e14fb77e31570b2 .node.clickable{cursor:pointer;}#d-5e14fb77e31570b2 .root .anchor path{fill:var(--text-subtle, #8b8f98)!important;stroke-width:0;stroke:var(--text-subtle, #8b8f98);}#d-5e14fb77e31570b2 .arrowheadPath{fill:rgba(255, 255, 255, 0);}#d-5e14fb77e31570b2 .edgePath .path{stroke:var(--text-subtle, #8b8f98);stroke-width:1px;}#d-5e14fb77e31570b2 .flowchart-link{stroke:var(--text-subtle, #8b8f98);fill:none;}#d-5e14fb77e31570b2 .edgeLabel{background-color:var(--bg, var(--bg, #111111));text-align:center;}#d-5e14fb77e31570b2 .edgeLabel p{background-color:var(--bg, var(--bg, #111111));}#d-5e14fb77e31570b2 .edgeLabel rect{opacity:0.5;background-color:var(--bg, var(--bg, #111111));fill:var(--bg, var(--bg, #111111));}#d-5e14fb77e31570b2 .labelBkg{background-color:rgba(17, 17, 17, 0.5);}#d-5e14fb77e31570b2 .cluster rect{fill:var(--bg-elevated, #181a1f);stroke:var(--border-strong, #3d4350);stroke-width:1px;}#d-5e14fb77e31570b2 .cluster text{fill:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 .cluster span{color:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:12px;background:var(--bg, var(--bg, #111111));border:1px solid var(--border-strong, #3d4350);border-radius:2px;pointer-events:none;z-index:100;}#d-5e14fb77e31570b2 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:var(--text-main, #e7e9ee);}#d-5e14fb77e31570b2 rect.text{fill:none;stroke-width:0;}#d-5e14fb77e31570b2 .icon-shape,#d-5e14fb77e31570b2 .image-shape{background-color:var(--bg, var(--bg, #111111));text-align:center;}#d-5e14fb77e31570b2 .icon-shape p,#d-5e14fb77e31570b2 .image-shape p{background-color:var(--bg, var(--bg, #111111));padding:2px;}#d-5e14fb77e31570b2 .icon-shape .label rect,#d-5e14fb77e31570b2 .image-shape .label rect{opacity:0.5;background-color:var(--bg, var(--bg, #111111));fill:var(--bg, var(--bg, #111111));}#d-5e14fb77e31570b2 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#d-5e14fb77e31570b2 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#d-5e14fb77e31570b2 .node .neo-node{stroke:var(--border-strong, #3d4350);}#d-5e14fb77e31570b2 [data-look="neo"].node rect,#d-5e14fb77e31570b2 [data-look="neo"].cluster rect,#d-5e14fb77e31570b2 [data-look="neo"].node polygon{stroke:url(#d-5e14fb77e31570b2-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#d-5e14fb77e31570b2 [data-look="neo"].swimlane.cluster rect{filter:none;}#d-5e14fb77e31570b2 [data-look="neo"].node path{stroke:url(#d-5e14fb77e31570b2-gradient);stroke-width:1px;}#d-5e14fb77e31570b2 [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#d-5e14fb77e31570b2 [data-look="neo"].node .neo-line path{stroke:var(--border-strong, #3d4350);filter:none;}#d-5e14fb77e31570b2 [data-look="neo"].node circle{stroke:url(#d-5e14fb77e31570b2-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#d-5e14fb77e31570b2 [data-look="neo"].node circle .state-start{fill:#000000;}#d-5e14fb77e31570b2 [data-look="neo"].icon-shape .icon{fill:url(#d-5e14fb77e31570b2-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#d-5e14fb77e31570b2 [data-look="neo"].icon-shape .icon-neo path{stroke:url(#d-5e14fb77e31570b2-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#d-5e14fb77e31570b2 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="d-5e14fb77e31570b2_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="d-5e14fb77e31570b2_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M209.202,54.5L196.335,58.667C183.468,62.833,157.734,71.167,144.867,80.708C132,90.25,132,101,132,106.375L132,111.75" id="d-5e14fb77e31570b2-L_S_P_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_S_P_0" data-points="W3sieCI6MjA5LjIwMjA3MjUzODg2MDEsInkiOjU0LjV9LHsieCI6MTMyLCJ5Ijo3OS41fSx7IngiOjEzMiwieSI6MTE1Ljc1fV0=" data-look="classic" marker-end="url(#d-5e14fb77e31570b2_flowchart-v2-pointEnd)"/><path d="M132,184.75L132,190.792C132,196.833,132,208.917,132,218.458C132,228,132,235,132,238.5L132,242" id="d-5e14fb77e31570b2-L_P_A_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_P_A_0" data-points="W3sieCI6MTMyLCJ5IjoxODQuNzV9LHsieCI6MTMyLCJ5IjoyMjF9LHsieCI6MTMyLCJ5IjoyNDZ9XQ==" data-look="classic" marker-end="url(#d-5e14fb77e31570b2_flowchart-v2-pointEnd)"/><path d="M352.798,54.5L365.665,58.667C378.532,62.833,404.266,71.167,417.133,78.833C430,86.5,430,93.5,430,97L430,100.5" id="d-5e14fb77e31570b2-L_S_M_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_S_M_0" data-points="W3sieCI6MzUyLjc5NzkyNzQ2MTEzOTksInkiOjU0LjV9LHsieCI6NDMwLCJ5Ijo3OS41fSx7IngiOjQzMCwieSI6MTA0LjV9XQ==" data-look="classic" marker-end="url(#d-5e14fb77e31570b2_flowchart-v2-pointEnd)"/><path d="M430,196L430,200.167C430,204.333,430,212.667,430,222.208C430,231.75,430,242.5,430,247.875L430,253.25" id="d-5e14fb77e31570b2-L_M_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_M_B_0" data-points="W3sieCI6NDMwLCJ5IjoxOTZ9LHsieCI6NDMwLCJ5IjoyMjF9LHsieCI6NDMwLCJ5IjoyNTcuMjV9XQ==" data-look="classic" marker-end="url(#d-5e14fb77e31570b2_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_S_P_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_P_A_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_S_M_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_M_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="d-5e14fb77e31570b2-flowchart-S-0" data-look="classic" transform="translate(281, 31.25)"><rect class="basic label-container" style="" x="-95.6484375" y="-23.25" width="191.296875" height="46.5"/><g class="label" style="" transform="translate(-71.6484375, -11.25)"><rect/><foreignObject width="143.296875" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Скан текущего origin</p></span></div></foreignObject></g></g><g class="node default" id="d-5e14fb77e31570b2-flowchart-P-1" data-look="classic" transform="translate(132, 150.25)"><rect class="basic label-container" style="" x="-124" y="-34.5" width="248" height="69"/><g class="label" style="" transform="translate(-100, -22.5)"><rect/><foreignObject width="200" height="45"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Страница: /, Accept: text/markdown, /index.md</p></span></div></foreignObject></g></g><g class="node default" id="d-5e14fb77e31570b2-flowchart-M-2" data-look="classic" transform="translate(430, 150.25)"><rect class="basic label-container" style="" x="-124" y="-45.75" width="248" height="91.5"/><g class="label" style="" transform="translate(-100, -33.75)"><rect/><foreignObject width="200" height="67.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Машинные файлы: robots.txt, sitemap.xml,<br />llms.txt, /.well-known/*</p></span></div></foreignObject></g></g><g class="node default" id="d-5e14fb77e31570b2-flowchart-A-3" data-look="classic" transform="translate(132, 303)"><rect class="basic label-container" style="" x="-124" y="-57" width="248" height="114"/><g class="label" style="" transform="translate(-100, -45)"><rect/><foreignObject width="200" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Оценено так, как видит ваша сессия<br />— сайт за логином получает настоящий ответ</p></span></div></foreignObject></g></g><g class="node default" id="d-5e14fb77e31570b2-flowchart-B-4" data-look="classic" transform="translate(430, 303)"><rect class="basic label-container" style="" x="-124" y="-45.75" width="248" height="91.5"/><g class="label" style="" transform="translate(-100, -33.75)"><rect/><foreignObject width="200" height="67.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Оценено так, как видит агент<br />— без кук, без аккаунта</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="d-5e14fb77e31570b2-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="d-5e14fb77e31570b2-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="d-5e14fb77e31570b2-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="var(--border-strong, #3d4350)" stop-opacity="1"/><stop offset="100%" stop-color="var(--border-strong, #3d4350)" stop-opacity="1"/></linearGradient></svg></div><figcaption>Один скан, две политики учётных данных</figcaption></figure>
+<p>С редиректами логика та же. Проба идёт по хопам так же, как навигация, каждый хоп прикладывает
+свои куки, а в ответе остаётся финальный адрес. Проверка, прошедшая на адресе, которого вы не
+запрашивали, — это проверка, чей адрес вам стоит увидеть.</p>
+<h2 id="что-меняет-форму-при-переезде-в-браузер">Что меняет форму при переезде в браузер</h2>
+<p>Перенос аудита в браузер — не бесплатное улучшение. Он меняет один набор слепых зон на другой,
+и инструмент, который этот обмен скрывает, хуже самого пробела.</p>
+<p><strong>DNS-AID требует другого вопроса, а не другого инструмента.</strong> В API расширений нет
+DNS-резолвера — и ровно на этом текст изначально останавливался, зря: резолвер и не нужен.
+DNS-over-HTTPS — это обычный <code>fetch</code>, и его JSON-ответ несёт обе половины вердикта: SVCB-записи
+под <code>_index._agents</code> и флаг <code>AD</code>, то есть решение резолвера о DNSSEC. Вторая половина важна:
+сайт с записями, но без проверенной цепочки, сканер тоже валит. Ни токена, ни аккаунта здесь не
+участвует, поэтому ответ одинаков для всех. На этом сайте она сдалась
+<a href="/agent-readiness-audit/">последней</a>: кеш резолвера перед ней взял ещё около сорока минут
+ресканов после того, как записи уже были живые.</p>
+<p><strong>WebMCP работает только здесь.</strong> Определение внутри страницы даёт один из трёх ответов, и весь
+смысл в третьем: найдено, точно отсутствует или определить не удалось. Браузер без этого API
+или страница, где внедрённый скрипт не смог отработать, дают «не удалось» — а не провал.
+«Не определяется» и «нет» — разные вещи, и проверка, которая оценивает их одинаково, выдумывает
+дефект.</p>
+<p><strong>MCP Server Card нужно пять адресов.</strong> Аудит <a href="/agent-readiness-audit/">это уже отмечал</a>, и
+лучше не стало: канонический путь из черновика, путь IETF, две пробы Cloudflare и де-факто
+старый файл — в игре все, потому что спецификация ушла вперёд, а сканеры за ней не пошли.
+Чекер, который стучится в один из них, сообщает состояние этого адреса, а не состояние вашего
+сервера.</p>
+<h2 id="где-ломается-оценка--это-не-одна-оценка">Где ломается: оценка — это не одна оценка</h2>
+<p>Три отдельные причины, почему оценка, которую вы читаете сегодня, не сойдётся с оценкой в
+другом месте.</p>
+<p><strong>Неприменимые проверки уходят из знаменателя.</strong> Общая оценка — это пройденные проверки,
+делённые на применимые, и проверка, которая применена быть не может, исключается, а не
+засчитывается как провал. То, до чего браузер действительно не дотягивается — не ответивший
+резолвер, не отработавшая среда в странице, — выпадает там и остаётся снаружи. Тот же сайт, тот
+же день, другая арифметика.</p>
+<p><strong>Две собственные поверхности Cloudflare расходятся между собой.</strong> 30 июля 2026 этот сайт
+показывал в веб-интерфейсе 79 из 100 и Level 5 «Agent-Native», а <code>/api/scan</code> в тот же час
+сообщал по тому же домену Level 4. Это устойчиво, а не пойманный на середине деплоя сбой, и
+значит у вопроса «на каком мы уровне» два правильных ответа — смотря какой эндпоинт спросить.</p>
+<p><strong>Сама матрица проверок движется.</strong> MCP Server Card выше — один пример; DNS-AID — следующий: он
+стоит на индивидуальном Internet-Draft, который истекает 28 ноября 2026, и опрашивается по
+меткам, которых этот черновик не определяет. А <code>llms.txt</code> не является оцениваемой проверкой ни
+в одном из двух инструментов: аудит меряет согласование форматов по <code>Accept</code>, поэтому сайт может
+опубликовать полную поверхность <code>llms.txt</code> и получить ноль за доступность контента — ровно с
+этого июльский разбор и начинался. Что считать готовностью, решают прямо сейчас, пока вы её
+меряете.</p>
+<p>Из этого не следует, что оценка бесполезна. Из этого следует, что она значима только против
+самой себя. Что этот origin делал вчера и что изменилось после последнего деплоя. Сравнивать
+своё число с числом чужого сайта — это сравнивать две арифметики.</p>
+<h2 id="расширение">Расширение</h2>
+<p>Именно это и делает <a href="https://chromewebstore.google.com/detail/agent-readiness-inspector/diofmjhnegmcccocikabageabmaokobd">Agent Readiness Inspector</a>,
+и его выход — повод для этой статьи. Это наше собственное расширение, оно гоняет 22 проверки в
+браузере по тому origin, на котором открыта текущая вкладка, и оно бесплатное. Сборки для
+Firefox и Edge лежат в магазинах на ревью; сегодня работает ссылка выше.</p>
+<ul>
+<li><strong>22 проверки, версионированные как данные.</strong> Правила robots и ИИ-краулеров, карты сайта,
+заголовки <code>Link</code>, согласование Markdown, Content Signals, Agent Skills, API Catalog, MCP
+Server Card, OAuth-discovery, Web Bot Auth, WebMCP, плюс протоколы агентской коммерции как
+неоцениваемое превью. У матрицы есть версия, а CI-задача следит за дрейфом матрицы наверху,
+потому что раздел выше — это постоянное состояние, а не плохой месяц.</li>
+<li><strong>Доказательства по каждой проверке.</strong> Ответ, из которого следует вердикт, вместе с финальным
+адресом после редиректов, и готовый к копированию промпт для починки.</li>
+<li><strong>Сохранённые сайты и регрессии.</strong> Рескан по расписанию, история и сигнал, когда проверка,
+которая проходила, проходить перестала. Сигналы сначала попадают в локальный ящик; разрешение
+на уведомления опционально и запрашивается, только если вы их включите.</li>
+<li><strong>Local-first.</strong> Сканы, история, настройки и сигналы лежат в хранилище браузера. Опциональное
+сравнение снаружи использует ваши собственные ключи к Cloudflare URL Scanner и по умолчанию
+выключено.</li>
+</ul>
+<p>Это независимая реализация открытых веб-стандартов, не связанная с Cloudflare и ею не
+одобренная.</p>
+<h2 id="каким-инструментом-что-делать">Каким инструментом что делать</h2>
+<table>
+<thead>
+<tr>
+<th>Что нужно</th>
+<th>isitagentready.com</th>
+<th>Agent Readiness Inspector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Публичный боевой сайт</td>
+<td>да</td>
+<td>да</td>
+</tr>
+<tr>
+<td>Стейджинг, localhost, до запуска, VPN</td>
+<td>нет, ошибка сайта или невалидный адрес</td>
+<td>да, если вкладка грузится</td>
+</tr>
+<tr>
+<td>Страницы за логином</td>
+<td>только анонимный вид</td>
+<td>ваша сессия, на пробах страницы</td>
+</tr>
+<tr>
+<td>WebMCP в странице</td>
+<td>нет</td>
+<td>да, определение внутри страницы</td>
+</tr>
+<tr>
+<td>DNS-AID</td>
+<td>да</td>
+<td>да, через DNS-over-HTTPS</td>
+</tr>
+<tr>
+<td>Оценка, которой вам предъявит Cloudflare</td>
+<td>да, это первоисточник</td>
+<td>нет, второе мнение</td>
+</tr>
+<tr>
+<td>Рескан по расписанию, сигнал о регрессии</td>
+<td>нет</td>
+<td>да, на машине, где оно установлено</td>
+</tr>
+</tbody>
+</table>
+<h2 id="где-расширение-останавливается">Где расширение останавливается</h2>
+<p>Оно аудирует origin той вкладки, которая у вас открыта, на машине, где установлено, и пока
+браузер запущен. Рескан по расписанию проходит за цикл ограниченную пачку, поэтому список
+наблюдения — это горстка важных вам сайтов, а не инвентаризация.</p>
+<p>Чтобы довести сайт до готовности к агентам ещё до публикации, этого хватает целиком, и стоит
+это ноль. Останавливается оно там, где вопрос меняется с «готов ли этот сайт» на «все ли они
+ещё готовы»: каждый домен портфеля, проверяемый по расписанию, которое не зависит от того,
+проснулся ли чей-то ноутбук, и с сигналом тому, кто на дежурстве. Это та же граница, в которую
+упирается <a href="/see-the-redirect-chain-your-browser-followed/">рекордер редирект-цепочек</a>, и по
+той же причине, а держит её через весь портфель <a href="https://301.st/features">301.st</a>.
+Для сайта, который перед вами, — поставьте расширение и читайте доказательства.</p>
+</div><section class="changelog"><h2 class="changelog__title"><svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-refresh"></use></svg>Что изменилось</h2><ul class="changelog__list"><li><time datetime="2026-08-06T00:00:00.000Z">2026-08-06</time> — Поправка, и она наша, а не спецификации. Статья утверждала, что DNS-AID «из расширения не проверяется вообще», называла это единственной проверкой, где сканер в дата-центре строго лучше, и ставила «всегда неприменимо» в сравнительную таблицу. Посылка была верной, вывод — нет: в API расширений действительно нет DNS-резолвера, но он и не нужен. DNS-over-HTTPS — это обычный fetch, и его JSON-ответ несёт обе половины вердикта: SVCB-записи и флаг `AD`, решение резолвера о DNSSEC. Перед переписыванием сверено с живым DNS: этот сайт отвечает записью и AD true, cloudflare.com и example.com — NOERROR без записей, isitagentready.com по-прежнему NXDOMAIN. Раздел, строка таблицы и абзац про арифметику выше исправлены; расширение теперь выполняет эту проверку у всех, без токена.</li><li><time datetime="2026-08-06T00:00:00.000Z">2026-08-06</time> — SEP-2127 разделил discovery надвое, и это разделение стоит инструменту из этой статьи одного из его же аргументов. За доменный уровень отвечает AI Catalog по адресу /.well-known/ai-catalog.json; сама Server Card ушла из .well-known совсем и теперь рекомендуется рядом с сервером, по `&lt;streamable-http-url&gt;/server-card` — поэтому 3 августа из заголовка предложения убрали &quot;via .well-known&quot;. Значит, описанные ниже пять адресов — это пять неверных адресов, включая наши: расширение стучится туда же, куда Cloudflare, а спецификация не рекомендует ни один из них. Дойти до карточки правильно — это другой алгоритм, а не шестой путь: забрать каталог, взять запись с типом application/mcp-server-card+json, перейти по её url. Сверено с SEP и нормативным docs/discovery.md в experimental-ext-server-card, оба по-прежнему открыты и не смержены.</li></ul></section></article></div></main><footer class="site-footer" data-pagefind-ignore><div class="container site-footer__inner"><span>&copy; 2026 301.sh</span><span class="site-footer__links"><a class="site-footer__brand" href="https://301.st" rel="noopener"><svg class="icon" viewBox="0 0 26 26" role="img" aria-label="301.st"><use href="#i-brand-301"></use></svg>Проект 301.st</a><a class="site-footer__social" href="https://t.me/traffic301" rel="noopener"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-brand-telegram"></use></svg>Telegram</a><a href="/rss.xml">RSS</a></span></div></footer></div><!-- Which icon shows is decided in CSS from data-theme, so this only flips
+         the attribute and remembers the choice. --><script>
+      (function () {
+        const root = document.documentElement;
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+          const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {
+            /* nothing to persist to — the switch still applies for this page */
+          }
+        });
+      })();
+    </script></body></html>

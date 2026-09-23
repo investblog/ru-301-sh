@@ -1,0 +1,10 @@
+{
+  "slug": "ru/redirect-domains-to-one-site-without-a-penalty",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "За какой 301 редирект Google наказывает, какую консолидацию доменов он одобряет и как склеить свои домены в один сайт на Cloudflare.",
+  "bytes": 89246,
+  "sha256": "a39fe0905d34053b"
+}

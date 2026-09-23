@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="ru" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'"><!-- Yandex Webmaster ownership of ru.301.sh (2026-09-02). The apex is verified by
+         the TXT record on the zone; the ru host is on GitHub Pages, which serves no
+         headers and has no DNS of its own, so it carries the meta tag. ru target only. --><meta name="yandex-verification" content="8204088dcafa0646"><title>Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100</title><meta name="description" content="Сканер Cloudflare гоняет 21 проверку готовности к ИИ-агентам. Полный llms.txt дал ноль: проверка читает Content-Type. Что стоило внедрить, а что — нет."><meta name="keywords" content="аудит готовности сайта для агентов, llms txt, content signals robots txt, cloudflare сканер агентов"><link rel="canonical" href="https://ru.301.sh/agent-readiness-audit/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="301.sh" href="/rss.xml"><link rel="alternate" hreflang="ru" href="https://ru.301.sh/agent-readiness-audit/"><link rel="alternate" hreflang="en" href="https://301.sh/agent-readiness-audit/"><link rel="alternate" hreflang="de" href="https://301.sh/de/agent-audit-21-von-100/"><link rel="alternate" hreflang="x-default" href="https://301.sh/agent-readiness-audit/"><meta property="og:type" content="website"><meta property="og:url" content="https://ru.301.sh/agent-readiness-audit/"><meta property="og:title" content="Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100"><meta property="og:description" content="Сканер Cloudflare гоняет 21 проверку готовности к ИИ-агентам. Полный llms.txt дал ноль: проверка читает Content-Type. Что стоило внедрить, а что — нет."><meta property="og:image" content="https://ru.301.sh/og/ru/agent-readiness-audit.png"><meta property="og:image:alt" content="Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><!-- Theme before first paint. Inline and synchronous on purpose: deferring
+         it would show a dark flash to light-theme readers. --><script>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          /* private mode or storage disabled — the dark default in the markup stands */
+        }
+      })();
+    </script><!-- WebMCP: list_articles / get_article on the browser's model context —
+         the same two tools as /mcp, backed by the same static surface. Apex
+         only: the ru host has neither /posts.json nor /mcp to back them. --><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100","description":"Сканер Cloudflare гоняет 21 проверку готовности к ИИ-агентам. Полный llms.txt дал ноль: проверка читает Content-Type. Что стоило внедрить, а что — нет.","datePublished":"2026-07-22T22:00:00.000Z","dateModified":"2026-07-22T22:00:00.000Z","keywords":"аудит готовности сайта для агентов, llms txt, content signals robots txt, cloudflare сканер агентов","inLanguage":"ru","mainEntityOfPage":{"@type":"WebPage","@id":"https://ru.301.sh/agent-readiness-audit/"},"author":{"@type":"Organization","name":"301.sh","url":"https://301.sh"},"publisher":{"@type":"Organization","name":"301.st","url":"https://301.st"}}</script><link rel="stylesheet" href="/_astro/Base.DP0lwrp2.css"></head><body><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none"><symbol id="i-mono-analytics" viewBox="0 0 20 20"><path d="M3.158 14.21 0 17.306V8.421h3.158m5.263 3.853-1.653-1.41-1.505 1.389V4.21h3.158m5.263 6.315-3.158 3.158V0h3.158m2.958 10.326-1.905-1.905H20v5.263L18.116 11.8l-7.59 7.526-3.652-3.179L2.894 20H0l6.81-6.674 3.716 3.137" fill="currentColor"/></symbol><symbol id="i-mono-arrow-right" viewBox="0 0 20 20"><path d="M2.08 8v4h9l-3.5 3.5L10 17.92 17.92 10 10 2.08 7.58 4.5l3.5 3.5z" fill="currentColor"/></symbol><symbol id="i-mono-check" viewBox="0 0 20 20"><path d="M6.75 17.77.54 11.56l2.83-2.83 3.38 3.39 9.88-9.89 2.83 2.83z" fill="currentColor"/></symbol><symbol id="i-mono-chevron-down" viewBox="0 0 24 24"><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor"/></symbol><symbol id="i-mono-clock" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7H11V13L15.75,15.85L16.5,14.62L12.5,12.25V7Z" fill="currentColor"/></symbol><symbol id="i-mono-directions-fork" viewBox="0 0 20 20"><path d="M1 1.5V10l3-3 3 3.5c1 1 1 2 1 2v6h4v-7s0-1-.53-2-1.47-2-1.47-2L7 4.08 9.5 1.5m6.5 0-4.46 4.47.46.53s.93 1 1.47 2c.21.4.33.79.4 1.13L19 4.5" fill="currentColor"/></symbol><symbol id="i-mono-directions" viewBox="0 0 20 20"><path d="M12.003 12.503v-2.5h-4v3h-2v-4a1 1 0 0 1 1-1h5v-2.5l3.5 3.5m4.21.29-9-9h-.01a.996.996 0 0 0-1.41 0l-9 9c-.39.39-.39 1.03 0 1.42l9 9c.39.38 1.02.39 1.42 0l9-9c.39-.39.39-1.03 0-1.42" fill="currentColor"/></symbol><symbol id="i-mono-dns" viewBox="0 0 20 20"><path d="M10.005 0C15.5 0 20 4.5 20 10.006c0 .585-.062 1.16-.154 1.715a5.7 5.7 0 0 0-1.921-.637c.051-.35.082-.708.082-1.078 0-.699-.102-1.367-.267-2.004h-3.38c.083.657.144 1.316.144 2.004 0 .534-.041 1.068-.103 1.592A6 6 0 0 0 11.813 14H8.095c.41 1.428 1.078 2.764 1.91 3.966.4-.575.75-1.182 1.068-1.819a6 6 0 0 0-.072.853c0 1.027.258 2.002.72 2.845-.555.092-1.13.154-1.716.154C4.499 20 0 15.512 0 10.006S4.51 0 10.005 0m7.276 13.04c.07 0 .14.07.14.14l.14.93c.21.08.43.22.64.36l.85-.36c.07 0 .21 0 .21.07l.71 1.21c.07.07 0 .14-.07.21l-.78.57v.7l.78.57c.07 0 .07.07 0 .14l-.71 1.21c-.07.07-.14.07-.21.07l-.85-.28c-.21.15-.36.22-.57.36l-.14.92c0 .07-.07.14-.14.14h-1.42c-.07 0-.14-.07-.21-.14l-.14-.92c-.21-.08-.43-.22-.57-.36l-.85.36c-.07 0-.14 0-.21-.07l-.71-1.21c-.07-.07 0-.14.07-.21l.78-.57v-.71l-.78-.57c-.07-.07-.07-.14-.07-.21l.71-1.21c.07-.07.14-.07.21-.07l.85.36c.21-.15.36-.22.57-.36l.14-.93c0-.07.07-.14.21-.14zm-14.2.961a8 8 0 0 0 4.315 3.564c-.596-1.109-1.048-2.31-1.397-3.564zm13.41 1.379c-.57 0-1.07.5-1.07 1.07s.5 1.07 1.07 1.07 1.07-.5 1.07-1.07-.5-1.07-1.07-1.07M2.26 8.002a8 8 0 0 0-.257 2.004c0 .688.092 1.355.257 1.992h3.38a16 16 0 0 1-.145-1.992c0-.688.062-1.347.145-2.004zm5.403 0a13 13 0 0 0-.165 2.004c0 .678.062 1.335.165 1.992h4.674c.092-.657.164-1.304.164-1.992s-.072-1.357-.164-2.004zm-.267-5.567A7.92 7.92 0 0 0 3.08 5.999h2.918c.35-1.253.8-2.445 1.397-3.564m2.609-.4a13.5 13.5 0 0 0-1.91 3.964h3.821c-.41-1.428-1.09-2.773-1.911-3.965m2.589.4a16 16 0 0 1 1.376 3.564h2.948a7.98 7.98 0 0 0-4.324-3.564" fill="currentColor"/></symbol><symbol id="i-mono-layers" viewBox="0 0 20 20"><path d="m10 14.465 7.36-5.73L19 7.465l-9-7-9 7 1.63 1.27m7.37 8.27-7.38-5.73L1 12.535l9 7 9-7-1.63-1.27z" fill="currentColor"/></symbol><symbol id="i-mono-lock" viewBox="0 0 20 20"><path d="M10 14.714a1.714 1.714 0 1 0 0-3.428 1.714 1.714 0 0 0 0 3.428M15.143 7a1.714 1.714 0 0 1 1.714 1.714v8.572A1.714 1.714 0 0 1 15.143 19H4.857a1.714 1.714 0 0 1-1.714-1.714V8.714C3.143 7.763 3.914 7 4.857 7h.857V5.286a4.286 4.286 0 1 1 8.572 0V7zM10 2.714a2.57 2.57 0 0 0-2.571 2.572V7h5.142V5.286A2.57 2.57 0 0 0 10 2.714" fill="currentColor"/></symbol><symbol id="i-mono-magnify" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" fill="currentColor"/></symbol><symbol id="i-mono-open-in-new" viewBox="0 0 20 20"><path d="M12 1v2h3.59l-9.83 9.83 1.41 1.41L17 4.41V8h2V1m-2 16H3V3h7V1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z" fill="currentColor"/></symbol><symbol id="i-mono-pages" viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z" fill="currentColor"/></symbol><symbol id="i-mono-refresh" viewBox="0 0 20 20"><path d="M15.65 4.35A7.96 7.96 0 0 0 10 2a8 8 0 1 0 0 16c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 10 16a6 6 0 1 1 0-12c1.66 0 3.14.69 4.22 1.78L11 9h7V2z" fill="currentColor"/></symbol><symbol id="i-mono-robot" viewBox="0 0 24 24"><path d="M17.5 15.5C17.5 16.61 16.61 17.5 15.5 17.5S13.5 16.61 13.5 15.5 14.4 13.5 15.5 13.5 17.5 14.4 17.5 15.5M8.5 13.5C7.4 13.5 6.5 14.4 6.5 15.5S7.4 17.5 8.5 17.5 10.5 16.61 10.5 15.5 9.61 13.5 8.5 13.5M23 15V18C23 18.55 22.55 19 22 19H21V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V19H2C1.45 19 1 18.55 1 18V15C1 14.45 1.45 14 2 14H3C3 10.13 6.13 7 10 7H11V5.73C10.4 5.39 10 4.74 10 4C10 2.9 10.9 2 12 2S14 2.9 14 4C14 4.74 13.6 5.39 13 5.73V7H14C17.87 7 21 10.13 21 14H22C22.55 14 23 14.45 23 15M21 16H19V14C19 11.24 16.76 9 14 9H10C7.24 9 5 11.24 5 14V16H3V17H5V20H19V17H21V16Z" fill="currentColor"/></symbol><symbol id="i-mono-sign-yield" viewBox="0 0 20 20"><path d="M18.496 2H1.505c-1.1 0-1.9 1.3-1.3 2.3l8.496 14.9c.3.5.8.8 1.299.8.5 0 1-.3 1.3-.8l8.495-14.9c.6-1-.2-2.3-1.3-2.3M10 17.5 2.304 4h15.292zm-5.097-12h10.194L10 14.5z" fill="currentColor"/></symbol><symbol id="i-mono-sun" viewBox="0 0 20 20"><path d="m2.318 16.446 1.282 1.28L5.236 16.1l-1.29-1.29M10 4.544A5.46 5.46 0 0 0 4.545 10 5.46 5.46 0 0 0 10 15.454 5.46 5.46 0 0 0 15.454 10 5.453 5.453 0 0 0 10 4.545m7.273 6.364H20V9.091h-2.727m-2.51 7.009 1.637 1.627 1.282-1.282-1.627-1.636m1.627-11.173L16.4 2.364 14.764 3.99l1.29 1.29M10.91 0H9.091v2.727h1.818M5.236 3.991 3.6 2.364 2.318 3.636l1.627 1.646zM0 10.909h2.727V9.091H0m10.91 8.182H9.09V20h1.82" fill="currentColor"/></symbol><symbol id="i-mono-web-scan" viewBox="0 0 20 20"><path d="M2 18h3v2H1.5c-.39 0-.74-.16-1.04-.46S0 18.89 0 18.5V15h2zm18-3v3.5c0 .39-.16.74-.46 1.04s-.65.46-1.04.46H15v-2h3v-3zM10.01 2.13c1.03 0 2.05.2 3.01.6a8 8 0 0 1 2.55 1.71 7.9 7.9 0 0 1 1.71 2.55c.4.95.6 1.98.6 3.01v.01c0 2.09-.83 4.09-2.31 5.57a7.87 7.87 0 0 1-8.58 1.71 8 8 0 0 1-2.55-1.71 7.87 7.87 0 0 1-2.31-5.57c0-4.34 3.53-7.88 7.88-7.88M8.5 13.15c.32 1.13.85 2.17 1.5 3.12h.01c.65-.95 1.18-1.99 1.5-3.12zm-3.95 0a6.32 6.32 0 0 0 3.4 2.8c-.47-.87-.82-1.82-1.1-2.8zm8.58 0c-.26.98-.62 1.93-1.09 2.8a6.3 6.3 0 0 0 3.41-2.8zM3.9 8.42c-.12.51-.2 1.03-.2 1.58s.07 1.08.2 1.58h2.66c-.06-.52-.11-1.04-.11-1.58s.05-1.06.11-1.58zm4.25 0c-.08.52-.13 1.04-.13 1.58s.05 1.06.13 1.58h3.69c.07-.52.13-1.04.13-1.58s-.06-1.07-.13-1.58zm5.29 0c.06.52.11 1.04.11 1.58s-.05 1.06-.11 1.58h2.66c.12-.51.2-1.03.2-1.58s-.07-1.08-.2-1.58zM7.95 4.05a6.2 6.2 0 0 0-3.4 2.8h2.3c.27-.98.63-1.93 1.1-2.8m2.04-.33c-.65.95-1.18 2-1.5 3.13h3.01c-.32-1.13-.85-2.19-1.5-3.13zm2.05.33c.48.87.84 1.82 1.09 2.8h2.32c-.76-1.3-1.96-2.3-3.41-2.8M5 2H2v3H0V1.5C0 1.11.16.76.46.46S1.11 0 1.5 0H5zm13.5-2c.39 0 .74.16 1.04.46s.46.65.46 1.04V5h-2V2h-3V0z" fill="currentColor"/></symbol><symbol id="i-brand-301" viewBox="0 0 26 26"><path d="M13.295 18.57c-.013 1.026-.074 2.047-.438 3.026-.681 1.828-2.003 2.903-3.893 3.284a8.3 8.3 0 0 1-1.56.146c-2.42.024-4.839.025-7.259.034H0v-5.454h.214c2.22.01 4.442.017 6.662.003a4 4 0 0 0 1.058-.16 1.66 1.66 0 0 0 1.22-1.546c.034-.746.052-1.494.031-2.24-.028-1.03-.769-1.766-1.8-1.803-.854-.03-1.71-.032-2.565-.035-1.536-.005-3.072 0-4.607-.008H0V9.5h.196c2.104 0 4.208.005 6.313-.007.307-.002.628-.053.917-.154.608-.212.98-.81.986-1.5q.003-.573 0-1.146c-.002-.878-.595-1.475-1.467-1.475H.034V.936h.172C3.289.947 6.37.943 9.454.95c.638.001 1.283.03 1.86.35.68.38 1.116.956 1.157 1.743.049.917.039 1.837.04 2.755.001.645-.004 1.29-.036 1.934-.045.886-.27 1.72-.849 2.42-.472.573-1.058.98-1.794 1.146-.01.002-.016.014-.041.036.089.018.167.031.243.05 1.595.404 2.635 1.372 2.984 3.001.128.598.203 1.213.24 1.824.047.785.048 1.574.037 2.361m8.421.051c-.002 1.014-.14 2.011-.596 2.933-.86 1.734-2.254 2.807-4.108 3.298-.848.224-1.712.225-2.59.2v-4.084c.265-.02.528-.026.788-.058 1.106-.136 1.82-.776 2.238-1.78.278-.667.396-1.375.41-2.089.04-1.84.053-3.68.064-5.52a60 60 0 0 0-.035-2.542c-.03-.8-.128-1.591-.436-2.343-.431-1.049-1.256-1.616-2.387-1.628-.429-.005-.857-.001-1.293-.001V.955c.018-.007.033-.018.048-.018.776.01 1.556-.023 2.327.043a5.94 5.94 0 0 1 3.612 1.601 5.94 5.94 0 0 1 1.857 3.404c.066.379.104.767.104 1.151q.01 5.869-.003 11.738zM26 .96v24.087q-.08.008-.152.01-1.155.003-2.312 0-.145 0-.286-.033a.38.38 0 0 1-.31-.325c-.017-.112-.016-.227-.016-.341q.002-11.388-.006-22.775c0-.44.185-.619.62-.621q.94-.004 1.883-.002z" fill="#4da3ff"/></symbol><symbol id="i-brand-301sh" viewBox="0 0 320 162"><g clip-path="url(#a)" fill="currentColor"><path d="M76.12 133.908c-2.128 8.731-7.304 16.72-15.067 21.412-4.249 2.564-9.038 4.088-13.923 4.886-6.248 1.016-12.754.709-19.075.742L0 161.052v-36.367h.435l23.783.041c1.733-.008 3.483.008 5.224-.033 5.845-.153 12.915.516 17.462-3.926 3.45-3.378 3.338-7.82 3.418-12.278q.059-3.541.08-7.094c.017-4.346-.233-8.215-3.458-11.505-3.345-3.418-7.304-3.7-11.835-3.74-3.047-.033-6.11-.057-9.158-.073L0 86.02V57.183h23.839c3.91-.04 8.288.113 12.157-.435 2.112-.29 4.587-1.395 6.055-2.878 3.805-3.813 3.007-9.287 3.087-14.165.057-3.007-.588-6.24-2.78-8.392-1.154-1.121-3.153-2.233-4.741-2.419-3.805-.427-8.385-.218-12.27-.218H.265L.258.073h37.907L48.718.065c7.288.008 13.93-.33 19.534 5.16 4.321 4.224 4.063 8.086 4.192 13.697.073 2.886.12 5.764.129 8.65 0 3.942-.032 7.893-.105 11.843-.17 9.118-.475 16.76-7.344 23.815-3.338 3.418-6.377 4.732-10.876 6.078 7.369 1.774 14.036 4.74 18.172 11.496a28 28 0 0 1 3.337 8.127c2.564 10.513 2.935 34.392.363 44.977M214.986.17a2 2 0 0 0 .21-.033c8.553-.604 18.066 1.298 24.653 7.038 6.772 5.894 9.763 14.842 10.335 23.55.258 3.95.129 7.98.153 11.963-.04 2.572.162 5.208-.072 7.764-.073.79-.548 1.959-1.201 2.418-.476.339-1.556.589-2.121.629-2.354.153-4.756.089-7.118.089l-13.827-.025.017-10.416c0-4.474.717-11.94-2.467-15.527-2.483-2.797-7.853-2.95-10.545-.322-2.314 2.257-2.741 5.998-2.749 9.094-.008 4.651-.162 9.432.854 13.995 1.83 8.457 9.489 12.956 16.035 17.712 4.644 3.37 8.651 6.087 12.754 10.287 11.9 12.19 10.827 27.709 10.65 43.349-.113 10.69-2.177 24.209-10.214 31.796-6.958 6.562-15.1 7.658-24.186 7.473-31.232-2.943-30.49-31.119-30.321-55.151.016-2.701-.145-5.515 3.378-5.7 2.467-.129 4.861-.073 7.296-.064h13.689c.057 7.425-.08 14.93.073 22.307.113 5.474 2.185 11.746 8.747 11.262 1.532-.113 3.434-.895 4.329-2.233 3.918-5.869 2.628-14.818 2.556-21.606-.573-11.359-7.345-17.438-16.035-23.557-3.257-2.29-7.127-5.337-10.255-7.9-8.836-7.24-12.73-15.705-13.576-27.032-.355-3.442-.065-6.997-.194-10.432-.766-20.872 5.523-38.906 29.152-40.72zM80.925.056c10.239-.024 19.155-.725 28.829 3.515a41.14 41.14 0 0 1 21.453 22.413 41 41 0 0 1 2.66 11.738c.347 4.272.137 11.028.137 15.527v54.216c0 4.466.017 8.908-.08 13.374-.355 17.221-10.602 31.184-26.516 37.351-8.48 2.959-13.286 3.023-22.057 2.854 0-8.876.226-18.518-.024-27.322 5.941-.266 11.174-.701 15.559-5.191 7.014-7.184 7.256-16.64 7.377-25.903l.169-9.199.234-25.975c0-3.572-.056-7.151-.161-10.722-.242-8.45-.758-18.495-7.111-24.928-5.45-5.514-13.318-4.62-20.485-4.595L80.925.065zm67.954.13 8.851-.04c1.661 0 3.515-.09 5.144.128.725.097 1.701.484 2.233 1.008.726.71.903 1.91.903 2.886.016 10.61.008 21.235.008 31.837v114.809c0 2.459.024 4.942-.073 7.409-.032.911-.266 1.177-.878 1.87-1.177 1.314-4.047 1.016-5.821 1h-9.271c-1.572.008-3.354.072-4.902-.113-.669-.081-1.733-.468-2.225-.935-.75-.702-.862-1.943-.862-2.919a10695 10695 0 0 1-.008-33.029V10.021c0-2.257-.017-4.555.056-6.82.024-.847.468-1.298 1.016-1.927 1.209-1.395 3.998-1.08 5.853-1.064zm171.105 3.885c0-.975-.177-2.176-.903-2.886-.532-.524-1.5-.91-2.233-1.008-1.637-.21-3.483-.129-5.144-.129l-8.852.04c-1.16 0-2.684-.136-3.958.114-.314.016-.629.016-.943.032-1.782.097-3.08 1.346-3.177 3.128-.12 2.12-.08 4.248-.08 6.377l.016 11.835-.016 40.817h-14.431V21.96l.016-11.884c0-2.209.065-4.474-.08-6.643C280.07 1.556 278.925.34 277.03.25c-5.651-.258-11.415 0-17.075-.105-2.588-.048-4.031 1.548-4.023 4.063-.016 2.846.008 5.692.008 8.538v136.423c0 2.822-.024 5.676.049 8.489-.008.782.371 1.854.903 2.419.419.435 1.668.87 2.257.886 5.829.226 11.706.033 17.551.057.999-.081 2.096-.331 2.781-1.113.46-.532.58-1.185.637-1.838.25-3.265.113-6.723.113-9.988v-16.64l.024-45.445h14.455v63.899c0 2.716-.065 5.457.064 8.174.146 3.032 3.153 3.032 5.434 3.015 2.588-.016 5.176-.024 7.764-.04v-.064h5.256c1.774.008 4.644.314 5.821-1 .612-.685.846-.959.878-1.87.089-2.467.065-4.942.065-7.409V35.908c0-10.602 0-21.227-.008-31.837M171.5 133.553c2.274-.121 4.676 0 6.966-.056 1.12-.032 4.111-.218 4.861.629.169.693.258 1.378.29 2.096.105 2.41.291 23.484-.266 24.331-.242.37-.5.379-.903.475-1.943.008-10.674.21-11.923-.209a.86.86 0 0 1-.186-.371c-.475-2.016-.548-25.363.041-26.363.419-.403.572-.411 1.128-.54z"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h320v161.109H0z"></path></clipPath></defs></symbol><symbol id="i-brand-bluesky" viewBox="0 0 24 24"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026" fill="currentColor"/></symbol><symbol id="i-brand-cloudflare" viewBox="0 0 24 24"><path d="M19.027 11.311c-.056 0-.106.042-.127.097l-.337 1.156c-.148.499-.092.956.154 1.295.226.311.605.491 1.063.512l1.842.11a.16.16 0 0 1 .134.07.2.2 0 0 1 .021.152.24.24 0 0 1-.204.153l-1.92.11c-1.041.049-2.16.873-2.553 1.884l-.141.353c-.028.069.021.138.098.138h6.598a.17.17 0 0 0 .17-.125 4.7 4.7 0 0 0 .175-1.26c0-2.561-2.124-4.652-4.734-4.652-.077 0-.162 0-.24.007" fill="#fbad41"/><path d="M16.509 16.767c.148-.499.091-.956-.155-1.295-.225-.311-.605-.492-1.062-.512l-8.659-.111a.16.16 0 0 1-.134-.07.2.2 0 0 1-.02-.152.24.24 0 0 1 .203-.152l8.737-.11c1.034-.05 2.159-.873 2.553-1.884l.5-1.28a.27.27 0 0 0 .013-.167c-.562-2.506-2.834-4.375-5.55-4.375-2.504 0-4.628 1.592-5.388 3.8a2.6 2.6 0 0 0-1.793-.49c-1.203.117-2.167 1.065-2.286 2.25a2.6 2.6 0 0 0 .063.878C1.57 13.153 0 14.731 0 16.677q.002.26.035.519a.17.17 0 0 0 .169.145h15.981a.22.22 0 0 0 .204-.152z" fill="#f6821f"/></symbol><symbol id="i-brand-devto" viewBox="0 0 24 24"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z" fill="currentColor"/></symbol><symbol id="i-brand-mastodon" viewBox="0 0 24 24"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z" fill="currentColor"/></symbol><symbol id="i-brand-telegram" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="currentColor"/></symbol></svg>
+<!-- Static texture in the desktop gutters. casino-platform animates the same
+         field with an 8 KB script; on a reading site a generated SVG gets the
+         look for no JavaScript. --><div id="trigons-bg" aria-hidden="true"></div><div class="page"><a class="skip-link" href="#main">Перейти к содержимому</a><header class="site-header" data-pagefind-ignore><div class="container site-header__inner"><a class="site-header__brand" href="/" aria-label="Главная 301.sh"><svg class="icon" viewBox="0 0 320 162" role="img" aria-label="301.sh"><use href="#i-brand-301sh"></use></svg></a><nav class="site-header__nav" aria-label="Main"><!-- No "Articles" link: the wordmark to its left already goes to the
+                 index, and the space it took is now the search field. --><div class="search-inline"><svg class="icon icon--sm search-inline__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg><input class="search-input" id="search-input-inline" type="search" placeholder="Искать по статьям" aria-label="Поиск" autocomplete="off" spellcheck="false"><kbd class="search-inline__kbd">⌘K</kbd><div class="search-results search-results--panel" id="search-results-inline" aria-live="polite"></div></div><button class="search-trigger" type="button" id="search-trigger" aria-label="Поиск"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg></button><dialog class="search-dialog" id="search-dialog" aria-label="Поиск"><form class="search-form" method="dialog" onsubmit="return false"><svg class="icon icon--sm search-form__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-magnify"></use></svg><input class="search-input" id="search-input-dialog" type="search" placeholder="Искать по статьям" aria-label="Поиск" autocomplete="off" spellcheck="false"><button class="search-close" type="button" id="search-close" aria-label="Закрыть">Esc</button></form><div class="search-results" id="search-results-dialog" aria-live="polite"></div></dialog><script>(function(){const emptyText = "Ничего не найдено.";
+
+  (function () {
+    const dialog = document.getElementById('search-dialog');
+    const trigger = document.getElementById('search-trigger');
+    const inline = document.getElementById('search-input-inline');
+
+    let pagefind = null;
+    let loading = null;
+
+    /** The runtime is a script plus a WASM index. Fetch it on first use, never before. */
+    function load() {
+      if (pagefind) return Promise.resolve(pagefind);
+      if (loading) return loading;
+      loading = import('/pagefind/pagefind.js')
+        .then(async (mod) => {
+          if (typeof mod.init === 'function') await mod.init();
+          pagefind = mod;
+          return mod;
+        })
+        .catch(() => null);
+      return loading;
+    }
+
+    function render(results, hits) {
+      results.innerHTML = '';
+      if (hits.length === 0) {
+        const p = document.createElement('p');
+        p.className = 'search-empty';
+        p.textContent = emptyText;
+        results.append(p);
+        return;
+      }
+      for (const hit of hits) {
+        const a = document.createElement('a');
+        a.className = 'search-hit';
+        a.href = hit.url;
+        const title = document.createElement('span');
+        title.className = 'search-hit__title';
+        title.textContent = hit.meta?.title ?? hit.url;
+        const excerpt = document.createElement('span');
+        excerpt.className = 'search-hit__excerpt';
+        // Pagefind marks matches with <mark>; this is its own output, not user input.
+        excerpt.innerHTML = hit.excerpt ?? '';
+        a.append(title, excerpt);
+        results.append(a);
+      }
+    }
+
+    /** Wire one input to one results container. Both surfaces use this. */
+    function wire(input, results) {
+      if (!input || !results) return;
+      let timer;
+      let seq = 0;
+
+      input.addEventListener('focus', load, { once: true });
+      input.addEventListener('input', () => {
+        clearTimeout(timer);
+        const query = input.value.trim();
+        if (query.length < 2) {
+          results.innerHTML = '';
+          return;
+        }
+        timer = setTimeout(async () => {
+          const mine = ++seq;
+          const api = await load();
+          if (!api || mine !== seq) return;
+          const search = await api.search(query);
+          if (mine !== seq) return;
+          const hits = await Promise.all(search.results.slice(0, 6).map((r) => r.data()));
+          if (mine === seq) render(results, hits);
+        }, 160);
+      });
+    }
+
+    wire(inline, document.getElementById('search-results-inline'));
+    wire(document.getElementById('search-input-dialog'), document.getElementById('search-results-dialog'));
+
+    // Clicking away closes the inline panel. The panel is only in the layout
+    // while it has results, so emptying it is enough to dismiss.
+    document.addEventListener('click', (e) => {
+      const box = document.querySelector('.search-inline');
+      if (box && !box.contains(e.target)) {
+        document.getElementById('search-results-inline').innerHTML = '';
+      }
+    });
+
+    trigger?.addEventListener('click', () => {
+      dialog.showModal();
+      document.getElementById('search-input-dialog').focus();
+      load();
+    });
+    document.getElementById('search-close')?.addEventListener('click', () => dialog.close());
+
+    // One shortcut, whichever surface is on screen. offsetParent is null when
+    // the inline input is display:none, which is exactly the mobile case.
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (inline && inline.offsetParent !== null) {
+          inline.focus();
+          inline.select();
+        } else if (dialog.open) {
+          dialog.close();
+        } else {
+          trigger?.click();
+        }
+      }
+      if (e.key === 'Escape' && inline && document.activeElement === inline) {
+        inline.value = '';
+        document.getElementById('search-results-inline').innerHTML = '';
+        inline.blur();
+      }
+    });
+  })();
+})();</script><a href="/about/">О сайте</a><a class="link-external" href="https://301.st" rel="noopener">301.st<svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-open-in-new"></use></svg></a><details class="lang-switch" data-lang-switch><summary class="lang-switch__trigger" title="Сменить язык" aria-label="Сменить язык"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%230052B4%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23D80027%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-switch__label">Русский</span><svg class="icon lang-switch__chevron" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mono-chevron-down"></use></svg></summary><div class="lang-menu"><a class="lang-menu__item" href="https://301.sh/agent-readiness-audit/" hreflang="en" lang="en"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cg%20fill%3D%22%23FFF%22%3E%3Cpath%20d%3D%22M0%200h513v341.3H0V0z%22%2F%3E%3Cpath%20d%3D%22M311.7%20230%20513%20341.3v-31.5L369.3%20230h-57.6zM200.3%20111.3%200%200v31.5l143.7%2079.8h56.6z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23012169%22%3E%3Cpath%20d%3D%22M393.8%20230%20513%20295.7V230H393.8zm-82.1%200L513%20341.3v-31.5L369.3%20230h-57.6zm146.9%20111.3-147-81.7v81.7h147zM90.3%20230%200%20280.2V230h90.3zm110%2014.2v97.2H25.5l174.8-97.2zM118.2%20111.3%200%2045.6v65.7h118.2zm82.1%200L0%200v31.5l143.7%2079.8h56.6zM53.4%200l147%2081.7V0h-147zM421.7%20111.3%20513%2061.1v50.2h-91.3zm-110-14.2V0h174.9L311.7%2097.1z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23c8102e%22%3E%3Cpath%20d%3D%22M288%200h-64v138.7H0v64h224v138.7h64V202.7h224v-64H288V0z%22%2F%3E%3Cpath%20d%3D%22M311.7%20230%20513%20341.3v-31.5L369.3%20230h-57.6zM143.7%20230%200%20309.9v31.5L200.3%20230h-56.6zM200.3%20111.3%200%200v31.5l143.7%2079.8h56.6zM368.3%20111.3%20513%2031.5V0L311.7%20111.3h56.6z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">English</span></a><a class="lang-menu__item" href="https://301.sh/de/agent-audit-21-von-100/" hreflang="de" lang="de"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23d00%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23ffce00%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">Deutsch</span></a><a class="lang-menu__item is-active" href="/agent-readiness-audit/" hreflang="ru" lang="ru" aria-current="page"><span class="lang-flag"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20513%20342%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M0%200h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%230052B4%22%20d%3D%22M0%20114h513v114H0z%22%2F%3E%3Cpath%20fill%3D%22%23D80027%22%20d%3D%22M0%20228h513v114H0z%22%2F%3E%3C%2Fsvg%3E" alt="" width="513" height="342"></span><span class="lang-menu__label">Русский</span></a></div></details><script type="module">var e=document.querySelector(`details[data-lang-switch]`);e instanceof HTMLDetailsElement&&(document.addEventListener(`click`,t=>{e.open&&t.target instanceof Node&&!e.contains(t.target)&&(e.open=!1)}),e.addEventListener(`keydown`,t=>{t.key===`Escape`&&e.open&&(e.open=!1,e.querySelector(`summary`)?.focus())}));</script><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Переключить тему"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-sun"></use></svg></button></nav></div></header><main class="site-main" id="main"><div class="container container--reading"><article><h1 class="page-title">Аудит готовности сайта к ИИ-агентам поставил нашей доке 21 из 100</h1><div class="article-meta"><span>Опубликовано <time datetime="2026-07-22T22:00:00.000Z">2026-07-22</time></span><span class="article-meta__verified"><svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-check"></use></svg>Данные Cloudflare проверены<time datetime="2026-07-22T00:00:00.000Z">2026-07-22</time></span><span class="article-meta__tags"><a class="tag" href="/tags/ai/">ai</a><a class="tag" href="/tags/cloudflare/">cloudflare</a><a class="tag" href="/tags/pages/">pages</a></span></div><!-- data-pagefind-body marks what Pagefind indexes. Without it the index
+           fills with header and footer text from every page. --><div class="prose article-body" data-pagefind-body><p>Cloudflare держит сканер на <a href="https://isitagentready.com">isitagentready.com</a>, который оценивает
+домен по готовности к ИИ-агентам. Двадцать одна проверка в пяти категориях: обнаружимость,
+доступность контента, контроль доступа ботов, discovery протоколов и коммерция.</p>
+<p>Мы навели его на <a href="https://spintax.net">spintax.net</a> — документационный сайт, неделей раньше
+выкативший полную поверхность <code>llms.txt</code>. Курируемый индекс, восемнадцать чистых
+Markdown-зеркал страниц документации и склеенный <code>llms-full.txt</code> на один запрос. Результат
+вернулся: 21 балл из 100, Level 1, «Basic Web Presence». Доступность контента — ноль из одного.</p>
+<p>Вот этот разрыв и интересен. Оценка измеряет не то, насколько ваш сайт читаем для модели. Она
+измеряет, какие механизмы HTTP вы реализовали. Это разные вещи, и сайт, публикующий
+<code>llms.txt</code>, думает, что покупает первую.</p>
+<p>Дальше — что аудит на самом деле измеряет, какие четыре проверки стоило внедрить и почему
+восемь провалов были правильными.</p>
+<h2 id="почему-полный-llmstxt-даёт-ноль-за-доступность-контента">Почему полный llms.txt даёт ноль за доступность контента</h2>
+<p>Проверка ищет не файл. Она отправляет запрос с <code>Accept: text/markdown</code> и читает <code>Content-Type</code>,
+который приходит в ответ. Если ответ <code>text/html</code>, проверка провалена, сколько бы Markdown вы ни
+публиковали по другим адресам.</p>
+<p>Это HTTP content negotiation, и он описан в спецификации с тех времён, когда агентов ещё никто
+не строил. Один адрес, несколько представлений, клиент заявляет предпочтение заголовком.
+<code>llms.txt</code> — это соглашение: файл по известному пути, о котором клиент должен знать заранее.
+Согласование форматов — это механизм: любой клиент, уже говорящий по HTTP, получит Markdown,
+просто попросив его, и даже не зная, что ваш сайт существует.</p>
+<p>На диске у нас лежали восемнадцать Markdown-файлов, и клиент не мог до них добраться иначе, как
+прочитав сначала индекс. Аудит был прав.</p>
+<h2 id="согласование-форматов-на-pages-на-бесплатном-тарифе">Согласование форматов на Pages, на бесплатном тарифе</h2>
+<p>Cloudflare продаёт готовый вариант. Настройка уровня зоны под названием Markdown for Agents
+перехватывает ответы, когда запрос несёт <code>Accept: text/markdown</code>, и на лету конвертирует HTML в
+Markdown. Это один переключатель в AI Crawl Control или один <code>PATCH</code> к настройке зоны
+<code>content_converter</code>.</p>
+<p>Доступна она на «Pro, Business and Enterprise plans, and SSL for SaaS customers at no cost».
+Сайт на Free.</p>
+<p>К тому же переключатель был бы вариантом хуже, даже будь он доступен. Наши зеркала генерируются на
+сборке из того же HTML через конфигурацию turndown с собственными правилами для карточных
+сеток, которые иначе превращаются в нечитаемые блоки, вложенные в ссылки. Автоматическая
+конвертация на краю сети про них знать не может. Выточенный вручную вывод бьёт универсальный, когда вы его и так
+собираете.</p>
+<p>Значит, Pages Function. Заметьте: <code>_headers</code> и <code>_redirects</code> эту задачу не решают вообще, потому
+что ни тот, ни другой не умеют ветвиться по заголовку запроса. Согласованию форматов нужен код.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// functions/_middleware.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#B392F0"> onRequest</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">request</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">env</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">next</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> context;</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> url</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> URL</span><span style="color:#E1E4E8">(request.url);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (request.method </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'GET'</span><span style="color:#F97583"> &amp;&amp;</span><span style="color:#B392F0"> wantsMarkdown</span><span style="color:#E1E4E8">(request.headers.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Accept'</span><span style="color:#E1E4E8">))) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> mirror</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">ASSETS</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">fetch</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#F97583">      new</span><span style="color:#B392F0"> Request</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> URL</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">mirrorFor</span><span style="color:#E1E4E8">(url.pathname), url.origin)),</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (mirror.ok) {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Response</span><span style="color:#E1E4E8">(mirror.body, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        status: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'text/markdown; charset=utf-8'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Vary'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Accept'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">          'X-Robots-Tag'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'noindex'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Link'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`&lt;${</span><span style="color:#E1E4E8">url</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">origin</span><span style="color:#9ECBFF">}${</span><span style="color:#E1E4E8">url</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">pathname</span><span style="color:#9ECBFF">}&gt;; rel="canonical"`</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> next</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> out</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Response</span><span style="color:#E1E4E8">(response.body, response);</span></span>
+<span class="line"><span style="color:#E1E4E8">  out.headers.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Vary'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Accept'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p>Три детали здесь заслуживают своего места.</p>
+<p><code>env.ASSETS.fetch</code> читает уже задеплоенный статический файл. Функция ничего не конвертирует и
+никакой копии контента не держит.</p>
+<p><code>Vary: Accept</code> стоит на обеих ветках. У одного адреса теперь два представления, и кеш, который
+не учитывает этот заголовок, отдаст Markdown браузеру.</p>
+<p>Запасной путь — это промах по зеркалу, а не ошибка. Если <code>env.ASSETS.fetch</code> вернёт 404, код
+уходит на HTML-ветку. Страница, у которой зеркала ещё нет, деградирует тихо — просто отдаёт HTML.</p>
+<p>Определение предпочтения заслуживает большего, чем поиск подстроки. Браузеры никогда не шлют
+<code>text/markdown</code>, так что самого присутствия достаточно как сигнала, но клиент может написать
+<code>Accept: text/markdown;q=0</code>, и это значит ровно обратное:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> wantsMarkdown</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">accept</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">accept) </span><span style="color:#F97583">return</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">const</span><span style="color:#79B8FF"> entry</span><span style="color:#F97583"> of</span><span style="color:#E1E4E8"> accept.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">','</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">type</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">...</span><span style="color:#79B8FF">params</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> entry.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">';'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (type.</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toLowerCase</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">!==</span><span style="color:#9ECBFF"> 'text/markdown'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">continue</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> q</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> params.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">p</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> p.</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">find</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">p</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> p.</span><span style="color:#B392F0">toLowerCase</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">startsWith</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'q='</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">q </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> Number.</span><span style="color:#B392F0">parseFloat</span><span style="color:#E1E4E8">(q.</span><span style="color:#B392F0">slice</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)) </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Результат проверяется из любого терминала, и в этом весь смысл механизма вместо соглашения:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ curl -sI -H 'Accept: text/markdown' https://spintax.net/</span></span>
+<span class="line"><span>HTTP/1.1 200 OK</span></span>
+<span class="line"><span>Content-Type: text/markdown; charset=utf-8</span></span>
+<span class="line"><span>Link: &lt;https://spintax.net/&gt;; rel="canonical"</span></span>
+<span class="line"><span>Vary: Accept</span></span>
+<span class="line"><span>X-Robots-Tag: noindex</span></span></code></pre>
+<h3 id="как-оставить-статический-сайт-статическим">Как оставить статический сайт статическим</h3>
+<p>Корневой <code>_middleware</code> по умолчанию срабатывает на каждом запросе. На сайте из 116 страниц плюс
+ассеты это превращает полностью статический деплой в такой, где каждый запрос дёргает воркер —
+ради Markdown на девятнадцати из них.</p>
+<p>Чинит это <code>_routes.json</code> в выводе сборки:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "version"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "include"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"/docs/"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"/docs/syntax"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"/docs/variables/"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">  "exclude"</span><span style="color:#E1E4E8">: []</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Мы генерируем этот файл из того же списка, из которого генерируются зеркала, поэтому
+маршрутизируемые адреса и адреса, участвующие в согласовании, разъехаться не могут. Девяносто
+семь локализованных страниц, 404 и все ассеты отдаются из статического хранилища и до функции
+не доходят.</p>
+<h2 id="две-ловушки-pages-в-которые-мы-попали-по-дороге">Две ловушки Pages, в которые мы попали по дороге</h2>
+<h3 id="пересекающиеся-правила-_headers-конкатенируются">Пересекающиеся правила _headers конкатенируются</h3>
+<p>Эта обошлась нам дороже всего по времени. Сайт уже отдавал свои Markdown-зеркала через вайлдкард:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/*.md</span></span>
+<span class="line"><span>  Content-Type: text/plain; charset=utf-8</span></span>
+<span class="line"><span>  X-Robots-Tag: noindex</span></span></code></pre>
+<p>Файлы навыков под <code>/.well-known/agent-skills/</code> потребовали более специфичного правила — с
+<code>text/markdown</code>. Оба правила совпадают с
+<code>/.well-known/agent-skills/spintax-syntax/SKILL.md</code>. Результат:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Content-Type: text/plain; charset=utf-8, text/markdown; charset=utf-8</span></span></code></pre>
+<p>Pages слил два правила, приписав значения одно к другому. Специфичное правило не победило. На выходе — невалидный <code>Content-Type</code>, и ничто вас об этом не предупреждает.</p>
+<p>Починили удалением вайлдкарда и генерацией одного явного правила на зеркало прямо в сборке.
+Восемнадцать правил вместо одного шаблона, что заметно ниже лимита в 100. Если два правила
+<code>_headers</code> могут совпасть с одним путём и задать заголовок с одним именем, считайте, что
+применятся оба.</p>
+<h3 id="wrangler-pages-dev-разбирает-_headers-один-раз">wrangler pages dev разбирает _headers один раз</h3>
+<p>Локальный дев-сервер читает <code>_headers</code> при старте и пишет в лог, сколько правил разобрал.
+Перечитывать после пересборки он не будет. Мы починили вайлдкард, пересобрали, перепроверили —
+и увидели тот же сломанный <code>Content-Type</code>, потому что сервер всё ещё держал правила, прочитанные
+две сборки назад.</p>
+<p>Перезапускайте дев-сервер после любого изменения <code>_headers</code>. Число правил в стартовом логе —
+самое быстрое подтверждение, что новый файл подхвачен.</p>
+<h2 id="три-дешёвые-проверки">Три дешёвые проверки</h2>
+<p><strong>Content Signals.</strong> Директива в <code>robots.txt</code>, которая заявляет, как контент может
+использоваться ИИ-системами. Она идёт внутрь группы <code>User-agent</code>, под преамбулой с
+contentsignals.org, которая и несёт юридический вес:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User-agent: *</span></span>
+<span class="line"><span>Content-Signal: ai-train=yes, search=yes, ai-input=yes</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Allow: /</span></span></code></pre>
+<p>Три сигнала, у каждого три значения: <code>search</code> для индексации, <code>ai-input</code> для извлечения и
+обоснования ответов, <code>ai-train</code> для обучения моделей. У документационного сайта, публикующего
+Markdown-зеркала для машин, ответ на все три очевиден. Преамбулу оставьте. Именно она
+превращает строку из пожелания в оговорку о правах по статье 4 директивы ЕС об авторском праве.</p>
+<p><strong>Заголовки Link в ответе.</strong> RFC 8288, причём аудит принимает только зарегистрированные типы
+отношений. <code>describedby</code> для машиночитаемых описаний, <code>alternate</code> для другого представления той
+же страницы, <code>service-doc</code> для точки входа в документацию:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Link: &lt;/llms.txt&gt;; rel="describedby"; type="text/plain",</span></span>
+<span class="line"><span>      &lt;/docs/variables.md&gt;; rel="alternate"; type="text/markdown",</span></span>
+<span class="line"><span>      &lt;/docs/&gt;; rel="service-doc"; type="text/html"</span></span></code></pre>
+<p>Агент, попавший на любую страницу, найдёт остальное прямо в заголовках ответа, не разбирая HTML
+и ничего не зная про <code>llms.txt</code>. Эта проверка ничего не стоит в рантайме: это статический вывод
+<code>_headers</code>, функция не нужна.</p>
+<p><strong>Agent Skills.</strong> Индекс discovery по адресу <code>/.well-known/agent-skills/index.json</code>,
+перечисляющий документы навыков, которые агент может установить. Единственная из четырёх, у
+которой есть ценность для продукта, а не только для аудита. Навык — это сжатый документ в
+повелительном наклонении, адресованный машине, которая вот-вот что-то сделает, и это другой
+артефакт, нежели страница документации, написанная для человека.</p>
+<p>Записи индекса несут SHA256-дайджест каждого артефакта. Индекс надо генерировать, а не писать
+руками. Дайджест, набранный руками, станет неверным в тот же миг, когда кто-нибудь отредактирует
+навык, а неверный дайджест сообщает клиенту, что файл подменили. Мы читаем <code>name</code> и
+<code>description</code> из фронтматтера самого навыка и хешируем байты в том виде, в каком они отдаются,
+так что у метаданных один источник и второго списка вести не надо.</p>
+<h2 id="восемь-провалов-которые-были-правильными">Восемь провалов, которые были правильными</h2>
+<p>Проверки, которые всё ещё провалены, — это DNS for AI Discovery, API Catalog, OAuth discovery,
+OAuth Protected Resource, Auth.md, MCP Server Card, A2A Agent Card и WebMCP. Рядом с ними стоят
+пять коммерческих проверок, и аудит помечает их нейтральными, а не проваленными, потому что
+видит, что сайт ничего не продаёт.</p>
+<p>У документационного сайта нет ни API, ни аутентификации, и продавать ему нечего. Публикация
+пустого документа OAuth discovery ради оценки рекламирует сервер авторизации, которого не
+существует. Каждый такой документ — обещание клиенту, что он там что-то найдёт. Обещание, которое
+вы не можете сдержать, хуже отсутствующего файла: клиент, который его прочитал, тратит запрос
+впустую, а потом гадает, вы сломались или врёте.</p>
+<p>Три из них заслуживают подробностей, потому что это рассуждение работает и в других случаях.</p>
+<h3 id="mcp-server-card-указывает-на-путь-который-спецификация-бросила">MCP Server Card указывает на путь, который спецификация бросила</h3>
+<p>Аудит проверяет три места для MCP Server Card: <code>/.well-known/mcp.json</code>,
+<code>/.well-known/mcp/server-cards.json</code> и <code>/.well-known/mcp/server-card.json</code>.</p>
+<p>Предложение, на котором это держится, — SEP-2127: открыто и не смержено, статус Draft,
+Extensions Track.
+Нормативный формат передачи вообще не живёт в репозитории спецификации. Он живёт в репозитории
+с названием <code>experimental-ext-server-card</code>. Путь discovery переезжал как минимум трижды, и
+сейчас канонический — <code>/.well-known/ai-catalog.json</code>, с медиатипом
+<code>application/ai-catalog+json</code>, и это каталог, индексирующий карточки, а не карточка.</p>
+<p>Ни один из трёх адресов, которые проверяет аудит, спецификация сейчас не использует. Пройти эту
+проверку сегодня — значит опубликовать по адресу, который спецификация уже покинула.</p>
+<h3 id="dns-aid-проверка-которую-не-проходит-её-собственный-автор">DNS-AID: проверка, которую не проходит её собственный автор</h3>
+<p>Этот провал стоит разобрать подробнее всех: он чище всего показывает, зачем провалы читают, а не
+закрывают.</p>
+<p>DNS for AI Discovery просит опубликовать записи SVCB в пространстве имён <code>_agents</code>, чтобы агенты
+могли найти ваши агентские эндпоинты через DNS. Это чистая DNS-запись: ни воркера, ни рантайма,
+ни платы, а SVCB Cloudflare поддерживает на бесплатном тарифе. По обычной арифметике это самая
+дешёвая проверка во всём списке.</p>
+<p>Три вещи говорят об обратном.</p>
+<p><strong>Спецификация — индивидуальный Internet-Draft.</strong> Версия 02, обновлена 27 мая 2026 года, не
+принята ни одной рабочей группой, без формального статуса в процессе стандартизации, и истекает
+28 ноября 2026 года. Это не повод её игнорировать. Это повод понимать, на чём вы строите.</p>
+<p><strong>Сканер опрашивает метки, которых драфт не определяет.</strong> Он запрашивает <code>_index._agents</code>,
+<code>_mcp._agents</code> и <code>_a2a._agents</code>. Драфт определяет точку входа на <code>_index._agents</code> и выбирает
+протоколы через сервисный параметр <code>alpn</code>, а не через отдельную метку с подчёркиванием на каждый
+протокол. <code>_mcp</code> и <code>_a2a</code> придумал сам сканер, а не спецификация — то же расхождение, что и с
+MCP Server Card выше, и по той же причине.</p>
+<p><strong>Никто их не публикует.</strong> Не риторическое «никто». Проверено через DNS-over-HTTPS
+22 июля 2026 года:</p>
+<table>
+<thead>
+<tr>
+<th>Домен</th>
+<th><code>_index._agents</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isitagentready.com</td>
+<td>NXDOMAIN</td>
+</tr>
+<tr>
+<td>cloudflare.com</td>
+<td>записей нет</td>
+</tr>
+<tr>
+<td>agents.cloudflare.com</td>
+<td>записей нет</td>
+</tr>
+</tbody>
+</table>
+<p>Сам сайт аудита и компания, которая этот аудит написала.</p>
+<p>И вывод, который отсюда следует: наведите сканер на него самого. <code>isitagentready.com</code>
+показывает <strong>Level 4, Agent-Integrated</strong>, и <code>dnsAid</code> — среди его собственных провалов. Тот же
+уровень, до которого дошёл этот блог, — у инструмента, который не проходит собственную проверку.</p>
+<p>Справедливости ради, одно возражение против публикации не работает. Соблазнительно сказать, что
+индексировать нечего — агентов у нас нет, — но драфт выносит содержимое индексного эндпоинта за
+скобки: это может
+быть и живой сервис, и статический документ, а сервисный параметр <code>well-known</code> указывает на
+метаданные по RFC 8615. Мы могли бы честно направить <code>_index._agents</code> на индекс Agent Skills,
+который уже публикуем.</p>
+<p>Мы не будем, и причина не в честности. Причина в том, что такая запись покупает число и больше
+ничего. Проверку, которую не реализует её собственный автор. По драфту, истекающему через четыре
+месяца. В пространстве имён, метки которого выдумал сам сканер.</p>
+<h3 id="a2a-agent-card-называет-живой-эндпоинт">A2A Agent Card называет живой эндпоинт</h3>
+<p>A2A Agent Card требует <code>url</code> для сервиса A2A. Она описывает агента, которому другие агенты могут
+передать работу. Мы такого не держим. Публикация карточки рекламировала бы сервис, который ни на
+что не отвечает.</p>
+<p>Отсюда же и потолок оценки. Level 5 требует Auth.md, MCP Server Card, A2A Agent Card и API
+Catalog. Контентный сайт может честно дотянуться максимум до одного из них. Level 4 — верх
+диапазона для сайта, который только публикует документы, и это свойство лестницы, а не изъян
+сайта.</p>
+<h2 id="mcp-сервер-который-мы-не-стали-делать-и-число-которое-всё-решило">MCP-сервер, который мы не стали делать, и число, которое всё решило</h2>
+<p>Единственный пункт в списке с настоящей ценностью для нас — это MCP-сервер: дать агенту
+инструмент <code>validate</code>, возвращающий структурированную диагностику со строкой и колонкой, и петля
+от «модель пишет шаблон» до «модель чинит шаблон» замыкается без человека внутри.</p>
+<p>Две находки отодвинули его с этой недели.</p>
+<p>Протокол — посреди слома. Ревизия 2026-07-28 лишает Streamable HTTP состояния.
+Заголовок <code>Mcp-Session-Id</code> «and the protocol-level session that came with it are also removed»,
+рукопожатие <code>initialize</code>/<code>initialized</code> убрано, а транспорт «now requires <code>Mcp-Method</code> and
+<code>Mcp-Name</code> headers so load balancers, gateways, and rate-limiters can route on the operation»,
+с новым методом <code>server/discover</code> для capabilities. Сами авторы называют это крупнейшей
+ревизией протокола с момента запуска. Строить под текущую форму — значит переписывать через
+неделю.</p>
+<p>Вторая находка — это число. Документация Cloudflare ясно говорит, что MCP-серверу без состояния
+не нужны ни Durable Objects, ни платный тариф, — и звучит это так, будто бесплатного тарифа
+хватит. А потом вы смотрите, что бесплатный тариф даёт: 10 мс CPU на запрос. Мы замерили движок, который
+собирались оборачивать, на Node, так что относитесь к этому как к порядку величины, а не к
+замеру целевой среды:</p>
+<table>
+<thead>
+<tr>
+<th>Работа</th>
+<th>CPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Шаблон 400 байт, один рендер, прогретый</td>
+<td>от 0,13 до 0,28 мс</td>
+</tr>
+<tr>
+<td>Шаблон 400 байт, двадцать вариантов</td>
+<td>от 3 до 6 мс</td>
+</tr>
+<tr>
+<td>Первый вызов на холодном изоляте</td>
+<td>около 12,5 мс</td>
+</tr>
+<tr>
+<td>Шаблон 16 КБ, двадцать вариантов</td>
+<td>около 85 мс</td>
+</tr>
+</tbody>
+</table>
+<p>Один только холодный старт изолята уже выходит за бюджет — до того, как разобран хоть один
+шаблон. Шаблон в 16 КБ превышает бюджет в восемь раз. Надёжному серверу на бесплатном тарифе понадобились бы ограничения,
+достаточно тесные, чтобы раздражать: около 4 КБ шаблона и пять вариантов. Тариф Workers Paid за
+пять долларов в месяц поднимает предел до 30 секунд CPU и снимает вопрос.</p>
+<p>Это проектное решение, которое принимают до написания кода, а не после.</p>
+<h2 id="куда-пришла-оценка-и-где-стоит-этот-сайт">Куда пришла оценка и где стоит этот сайт</h2>
+<p>Три пройденные проверки стали семью, а уровень поднялся с 1 до 4, «Agent-Integrated». Ещё шесть
+помечены нейтральными, потому что неприменимы, а восемь проваленных — ровно те, что и должны
+быть проваленными.</p>
+<p>Полезным выводом было не число. Полезным было узнать, что неделя работы над <code>llms.txt</code> дала
+файлы, которые ни один клиент не смог бы запросить через согласование форматов, — а это
+конкретная и исправимая вещь, которую никакое чтение собственной документации не вскрыло бы.</p>
+<p>Для протокола: этот блог на момент написания статьи набирал Level 1, три из двадцати одной —
+ровно там же, откуда стартовал spintax.net. Прогон тех же четырёх проверок на нём в тот же день
+дал другой ответ, и разница стоит больше оценки.</p>
+<p>Все четыре внедрены, и теперь скан показывает Level 4 — тот же, что у сайта, о котором эта
+статья. Content Signals, заголовки <code>Link</code>, индекс Agent Skills и Markdown-зеркало каждой статьи,
+проиндексированное в <a href="/llms.txt">llms.txt</a>. Интереснее всего четвёртое, потому что форма сайта
+меняет его цену.</p>
+<p>Этот сайт не на Pages. Это воркер, отдающий статические ассеты, и до сегодняшнего дня скрипта у
+него не было вовсе — поэтому «requests to static assets are free and unlimited» покрывало
+каждый просмотр страницы. Согласованию форматов нужен код перед этими ассетами, и любая
+страница, которая этот код выполняет, становится обычным запросом воркера и списывается из 100 000 в сутки
+на бесплатном тарифе.</p>
+<p>Поэтому код выполняется на как можно меньшем числе адресов: в <code>run_worker_first</code> перечислены
+апекс и
+односегментные пути, и больше ничего. Стили, картинки, сами зеркала, <code>robots.txt</code> и sitemap до
+него не доходят и остаются бесплатными.</p>
+<p>Одну деталь стоит украсть. Ключ кеша Cloudflare не включает <code>Vary</code>, если это не прописано Cache
+Rule, поэтому один адрес с двумя представлениями может отдать Markdown человеку из кеша. Чинится
+это не зональным правилом: это <code>Cache-Control: no-store</code> только на markdown-ветке. Агенты —
+тонкий ручеёк, HTML сохраняет своё обычное кеширование, и сценарий отказа исчезает.</p>
+<p>Вторая деталь стыдная и дешёвая. Обрабатывайте <code>HEAD</code>, а не только <code>GET</code>. RFC 9110 говорит, что
+<code>HEAD</code> обязан отвечать теми же заголовками, что отдал бы <code>GET</code>, а первая версия этого не делала —
+о чём <code>curl -I</code> сообщил немедленно, потому что именно так любой и стал бы проверять это руками.</p>
+<p>Те же четыре проверки, тот же день, два разных сайта, и работа на каждом оказалась разной. Вот
+настоящий урок от прогона аудита: проверки универсальны, а ваша инфраструктура — нет.</p>
+<p>Прогоните его на собственном домене. А потом прочитайте провалы и решите, какие из них описывают
+сайт, который вы действительно держите:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -sS</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> https://isitagentready.com/api/scan</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -H</span><span style="color:#9ECBFF"> 'content-type: application/json'</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -d</span><span style="color:#9ECBFF"> '{"url":"https://example.com"}'</span></span></code></pre>
+<p>JSON-эндпоинт возвращает каждую проверку со статусом, сообщением и списком сделанных запросов,
+это быстрее браузера, а результат удобнее сравнивать после деплоя. Он сообщает уровень, а не оценку; число
+из 100 — это уже веб-интерфейс.</p>
+<p>Обеим поверхностям нужен публичный адрес, поэтому стейджинг, ещё не запущенный сайт и всё, что
+за логином, оценки не получают вовсе. Эту дыру мы в итоге и закрыли
+<a href="/audit-agent-readiness-in-the-browser/">расширением, которое гоняет проверки в браузере</a>, —
+там аудит достаёт туда же, куда достаёте вы.</p>
+</div><section class="changelog"><h2 class="changelog__title"><svg class="icon icon--sm" viewBox="0 0 20 20" aria-hidden="true"><use href="#i-mono-refresh"></use></svg>Что изменилось</h2><ul class="changelog__list"><li><time datetime="2026-08-06T00:00:00.000Z">2026-08-06</time> — Поправка к нашей же записи двухдневной давности, где сказано, что DNS-AID из расширения не проверяется. В API расширений нет DNS-резолвера, но он и не нужен: DNS-over-HTTPS — обычный fetch, и в ответе приходят и SVCB-записи, и вердикт резолвера о DNSSEC. Разбор — в статье про браузер, ссылка в конце.</li><li><time datetime="2026-08-06T00:00:00.000Z">2026-08-06</time> — Названный ниже канонический путь устоял, а картина получила вторую половину. SEP-2127 теперь разделяет доменный уровень и саму карточку: AI Catalog по адресу /.well-known/ai-catalog.json ссылается на Server Cards, а сами карточки ушли из .well-known совсем — рекомендуется `&lt;streamable-http-url&gt;/server-card`, рядом с сервером. Поэтому 3 августа из заголовка предложения убрали &quot;via .well-known&quot;. Сверено с SEP и нормативным docs/discovery.md в experimental-ext-server-card; оба по-прежнему открыты и не смержены, так что раздел ниже остаётся верным, а три адреса, которые опрашивает аудит, — по-прежнему три адреса, которых спецификация не использует.</li><li><time datetime="2026-08-04T00:00:00.000Z">2026-08-04</time> — Мы выпустили расширение для браузера, которое гоняет этот класс проверок локально; разбор — по ссылке в конце. Оно существует из-за того единственного, чего не может эта статья: сканеру нужен публичный адрес, поэтому у стейджинга или страницы за логином оценки нет вовсе. Перенос аудита в браузер меняет слепые зоны, а не убирает их — DNS-AID из расширения не проверяется, а WebMCP проверяется только там.</li><li><time datetime="2026-07-30T00:00:00.000Z">2026-07-30</time> — Потолок пал, и толкнули его мы сами. Веб-интерфейс сканера теперь ставит spintax.net Level 5 «Agent-Native» и 79 баллов из 100, а этот сайт в тот же день дошёл до того же уровня: сначала 71, потом 79, когда прошла проверка DNS-AID. И не потому, что лестница стала ниже: оба сайта перестали быть просто набором документов. С настоящим MCP-сервером на /mcp каталог API перестал быть обещанием, которое нечем подкрепить (это linkset по RFC 9264, называющий один API), справочник Web Bot Auth отдаётся с намеренно пустым keys[] — «мы ничего не подписываем», сказанное за один запрос вместо 404, — WebMCP регистрирует на каждой странице те же два инструмента, что и /mcp, а записи _agents появились в DNS с проверенным DNSSEC. Записи, которые 22 июля не публиковал никто, теперь публикуют два сайта. OAuth, auth.md и карточка A2A остаются честными 404, и это осознанно ограничивает категорию API discovery 57 баллами. Прежде чем сравнивать цифры, надо знать одно: веб-интерфейс и рекомендуемый ниже эндпоинт /api/scan расходятся — API до сих пор сообщает про оба сайта Level 4, тогда как интерфейс говорит Level 5.</li><li><time datetime="2026-07-29T00:00:00.000Z">2026-07-29</time> — 301.sh теперь проходит проверку MCP Server Card: после того как сайт получил настоящий MCP-сервер на stateless-ревизии 2026-07-28, мы опубликовали карточку из одного файла по проверяемому адресу, и скан показывает 8 пройденных проверок из 21 при сохранении Level 4. Критика ниже остаётся в силе — SEP-2127 так и не смержен, а канонический путь discovery в спецификации уехал дальше, — но расклад изменился: с живым сервером за спиной карточка по проверяемому адресу стоит один статический файл и говорит правду. На канонический путь перейдём, когда расширение смержат.</li><li><time datetime="2026-07-22T00:00:00.000Z">2026-07-22</time> — Прогнали те же четыре проверки на этом сайте, что подняло его с Level 1 до Level 4. Добавили, во что это обходится на воркере, а не на Pages: ограничение кода адресами страниц, no-store на markdown-ветке, потому что Vary не входит в ключ кеша Cloudflare, и обработка HEAD. Плюс раздел про DNS-AID после проверки того, кто публикует такие записи: никто, включая сам сайт аудита и cloudflare.com, а аудит ставит себе Level 4 с проваленным dnsAid.</li></ul></section></article></div></main><footer class="site-footer" data-pagefind-ignore><div class="container site-footer__inner"><span>&copy; 2026 301.sh</span><span class="site-footer__links"><a class="site-footer__brand" href="https://301.st" rel="noopener"><svg class="icon" viewBox="0 0 26 26" role="img" aria-label="301.st"><use href="#i-brand-301"></use></svg>Проект 301.st</a><a class="site-footer__social" href="https://t.me/traffic301" rel="noopener"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-brand-telegram"></use></svg>Telegram</a><a href="/rss.xml">RSS</a></span></div></footer></div><!-- Which icon shows is decided in CSS from data-theme, so this only flips
+         the attribute and remembers the choice. --><script>
+      (function () {
+        const root = document.documentElement;
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+          const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {
+            /* nothing to persist to — the switch still applies for this page */
+          }
+        });
+      })();
+    </script></body></html>

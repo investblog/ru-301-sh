@@ -1,0 +1,10 @@
+{
+  "slug": "ru/count-clicks-on-a-redirect",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Web Analytics, Plausible и Umami — маяки на странице, поэтому 301 для них невидим. Аналитика редиректа: воркер плюс Analytics Engine считает клик на бесплатном тарифе.",
+  "bytes": 96710,
+  "sha256": "ea6cb350d55b9307"
+}

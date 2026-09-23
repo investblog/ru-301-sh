@@ -1,0 +1,10 @@
+{
+  "slug": "ru/every-way-to-redirect-on-cloudflare",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Шесть способов сделать редирект на Cloudflare: Single Redirects, Bulk Redirects, Snippets, Workers, _redirects и origin. Где живёт правило, квоты Free и подвохи.",
+  "bytes": 87982,
+  "sha256": "b729f236209991d9"
+}

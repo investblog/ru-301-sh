@@ -1,0 +1,10 @@
+{
+  "slug": "ru/audit-agent-readiness-in-the-browser",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Внешнему сканеру нужен публичный адрес, поэтому у стейджинга оценки нет вообще. Что меняет перенос проверок в браузер и одно правило, которое делает результат честным.",
+  "bytes": 91645,
+  "sha256": "b7b8b44ee1fed35e"
+}
