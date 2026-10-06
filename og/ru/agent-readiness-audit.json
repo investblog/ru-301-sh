@@ -1,0 +1,10 @@
+{
+  "slug": "ru/agent-readiness-audit",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Сканер Cloudflare гоняет 21 проверку готовности к ИИ-агентам. Полный llms.txt дал ноль: проверка читает Content-Type. Что стоило внедрить, а что — нет.",
+  "bytes": 92425,
+  "sha256": "7685cd31cfe1f048"
+}

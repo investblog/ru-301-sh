@@ -1,0 +1,10 @@
+{
+  "slug": "ru/find-the-redirect-that-drops-your-gclid",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Google Ads пишет, что редиректы теряют данные о кликах, и отправляет к айтишникам. Как самому найти хоп, на котором пропадает gclid, одним curl примерно за минуту.",
+  "bytes": 91743,
+  "sha256": "e98f7d98ae2cb26f"
+}

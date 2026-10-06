@@ -1,0 +1,10 @@
+{
+  "slug": "ru/unique-click-id-on-a-free-redirect",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Уникальный идентификатор клика на бесплатном редиректе: uuidv4() в цели редиректа запрещён, а cf.ray_id — нет. Single Redirect метит каждый клик, замеры и ловушки.",
+  "bytes": 98125,
+  "sha256": "8b44bc9f28184285"
+}
