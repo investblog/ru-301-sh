@@ -1,0 +1,10 @@
+{
+  "slug": "ru/count-visits-without-a-third-party-script",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Скрипт Web Analytics грузится с чужого хоста, и его режут CSP и блокировщики. Воркер на пути вашего сайта считает просмотры, переходы по коротким ссылкам и QR-кодам.",
+  "bytes": 88409,
+  "sha256": "45718ea18c3f148d"
+}

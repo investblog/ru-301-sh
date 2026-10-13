@@ -1,0 +1,10 @@
+{
+  "slug": "ru/redirect-silently-fails",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Зона зелёная, правило на месте, а домен отдаёт 522, ошибку сертификата или парковку. Три сценария тихого отказа в Cloudflare и один curl, который их различает.",
+  "bytes": 105712,
+  "sha256": "32162134ba27da01"
+}
