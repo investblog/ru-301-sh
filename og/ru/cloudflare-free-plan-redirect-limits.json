@@ -1,0 +1,10 @@
+{
+  "slug": "ru/cloudflare-free-plan-redirect-limits",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "В феврале 2025 Cloudflare подняла квоту Bulk Redirects на бесплатном тарифе до 10 000. Раскатка дошла не до всех. Как проверить свой аккаунт и как это исправить.",
+  "bytes": 97861,
+  "sha256": "1cf3e1d1ba39a7ce"
+}

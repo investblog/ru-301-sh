@@ -1,0 +1,10 @@
+{
+  "slug": "ru/vps-jobs-on-cloudflares-free-plan",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Переезд с VPS на Cloudflare по задачам: сайт, TLS, DNS, редиректы, крон, почта, хранилище, мелкие API. Что закрывает бесплатный тариф и где он кусается.",
+  "bytes": 96229,
+  "sha256": "5e644b62b315b64f"
+}

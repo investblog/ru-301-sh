@@ -1,0 +1,10 @@
+{
+  "slug": "ru/mcp-server-on-workers-free-plan",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Ревизия 2026-07-28 сделала MCP протоколом без состояния, а Cloudflare днём раньше объявила устаревшим путь через Durable Objects. Собрали сервер на Workers и замерили.",
+  "bytes": 93546,
+  "sha256": "41812f36faf3b810"
+}
