@@ -1,0 +1,10 @@
+{
+  "slug": "ru/page-rules-where-every-setting-went",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Документация Cloudflare помечает Page Rules устаревшими и говорит, чем заменить почти каждую настройку. У пяти замены нет — автоматическая миграция молча их теряет.",
+  "bytes": 101767,
+  "sha256": "6ebe59e571ccbc37"
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "ru/what-cloudflare-free-alerts-you-about",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Мы сорок минут держали поддомен сломанным при включённом бесплатном алерте Cloudflare, и он промолчал. Что отслеживает Free и воркер, который проверяет редиректы.",
+  "bytes": 92153,
+  "sha256": "e35f954ce4356a4d"
+}

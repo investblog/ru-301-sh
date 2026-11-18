@@ -1,0 +1,10 @@
+{
+  "slug": "ru/audit-300-domains-one-script",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "В дашборде Cloudflare нет общего вида по всем доменам. Один скрипт показывает, какие из 300 ещё отвечают, а бесплатный DR-эндпоинт Ahrefs — какие стоит чинить.",
+  "bytes": 92822,
+  "sha256": "3b98ef909d034d24"
+}

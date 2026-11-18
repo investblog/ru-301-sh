@@ -1,0 +1,10 @@
+{
+  "slug": "ru/see-the-redirect-chain-your-browser-followed",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "curl показывает серверные хопы. Он не видит ни JS-редиректа, ни meta refresh, ни HSTS-апгрейда, а DevTools забывает всё при переходе. Как поймать цепочку целиком.",
+  "bytes": 94696,
+  "sha256": "412c701283b3c25e"
+}

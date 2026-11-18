@@ -1,0 +1,10 @@
+{
+  "slug": "ru/give-ai-agent-cloudflare-token-not-the-chat",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Токен, вставленный в чат агента, остаётся в переписке. Четыре шага, после которых Claude Code или Codex работает с Cloudflare, ни разу не увидев токен.",
+  "bytes": 87640,
+  "sha256": "4a5b45b437ebe14b"
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "ru/redirect-rule-active-but-nothing-happens",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Active значит «сохранено», а не «до правила дошёл запрос». Четыре вопроса находят причину, на каждый отвечает один запрос. Всё снято живьём.",
+  "bytes": 87308,
+  "sha256": "41ca31f3f6c3e6f1"
+}

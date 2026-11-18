@@ -1,0 +1,10 @@
+{
+  "slug": "ru/bot-analytics-worker-on-every-request",
+  "profile": "landscape",
+  "width": 1200,
+  "height": 630,
+  "template": "301sh-og-landscape",
+  "alt": "Сервисы аналитики ботов ставят воркер перед всем трафиком сайта. Что это делает с бесплатной квотой и данными посетителей и что Cloudflare показывает бесплатно.",
+  "bytes": 100369,
+  "sha256": "5209ba38cf4750b3"
+}
